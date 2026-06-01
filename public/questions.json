@@ -1,0 +1,1622 @@
+[
+  {
+    "id": "1",
+    "question": "Mekanisme kerja obat golongan GLP-1 receptor agonist (misalnya semaglutide) adalah...",
+    "options": [
+      "Meningkatkan sekresi insulin secara bergantung glukosa, menghambat glukagon, dan memperlambat pengosongan lambung",
+      "Menghambat reabsorpsi glukosa di tubulus proksimal ginjal",
+      "Menghambat enzim alfa-glukosidase di usus halus sehingga absorbsi glukosa melambat",
+      "Merangsang sekresi insulin secara konstan tanpa bergantung kadar glukosa darah",
+      "Mengaktifkan PPAR-gamma untuk meningkatkan sensitivitas insulin"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "2",
+    "question": "Seorang pasien wanita, 52 tahun, didiagnosis DM tipe 2 dengan HbA1c 9,2%. Setelah 3 bulan monoterapi metformin 1000 mg/hari, HbA1c turun menjadi 8,0%. Langkah tatalaksana selanjutnya yang paling tepat adalah...",
+    "options": [
+      "Menambahkan obat antidiabetes kedua (dual therapy) dan lanjutkan metformin",
+      "Langsung mengganti metformin dengan insulin basal",
+      "Menghentikan metformin dan beralih ke sulfonilurea",
+      "Meningkatkan dosis metformin hingga 3000 mg tanpa obat tambahan",
+      "Memberikan insulin prandial dosis tinggi langsung"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "3",
+    "question": "Kebutuhan karbohidrat harian yang direkomendasikan untuk penderita DM tipe 2 adalah...",
+    "options": [
+      "20–30% dari total kalori harian",
+      "35–40% dari total kalori harian",
+      "45–65% dari total kalori harian, terutama karbohidrat kompleks",
+      "Lebih dari 70% dari total kalori harian",
+      "Tidak boleh sama sekali mengonsumsi karbohidrat"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "4",
+    "question": "Seorang pasien DM tipe 2 mengeluh sering pusing dan jantung berdebar saat melewatkan makan siang. Gula darah sewaktu 52 mg/dL. Obat antidiabetes yang paling mungkin menyebabkan kondisi ini adalah...",
+    "options": [
+      "Metformin",
+      "SGLT-2 inhibitor",
+      "Acarbose",
+      "Glibenklamid (sulfonilurea)",
+      "Pioglitazone"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "5",
+    "question": "Ciri khas hipertiroidisme pada pemeriksaan klinis adalah...",
+    "options": [
+      "Berat badan bertambah, konstipasi, kulit kering",
+      "Bradikardi, tidak tahan dingin, rambut rontok",
+      "Edema non-pitting, suara serak, refleks menurun",
+      "Hiperglikemia, buffalo hump, striae ungu",
+      "Penurunan berat badan, takikardi, tidak tahan panas, keringat berlebih"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "6",
+    "question": "Kriteria diagnosis diabetes melitus berdasarkan pemeriksaan gula darah puasa adalah...",
+    "options": [
+      "GDP ≥ 126 mg/dL yang dikonfirmasi dengan pengukuran ulang",
+      "GDP ≥ 100 mg/dL",
+      "GDP ≥ 110 mg/dL",
+      "GDP ≥ 140 mg/dL",
+      "GDP ≥ 200 mg/dL"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "7",
+    "question": "Pada kondisi sindrom metabolik, kombinasi kelainan yang paling khas adalah...",
+    "options": [
+      "Hipoglikemia, HDL tinggi, LDL rendah",
+      "Trigliserida tinggi, HDL rendah, resistensi insulin, tekanan darah tinggi, lingkar pinggang meningkat",
+      "Hipokalsemia, hipokalemia, hipernatremia",
+      "TSH rendah, T4 tinggi, kadar kortisol normal",
+      "Anemia mikrositik, LED meningkat, albumin normal"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "8",
+    "question": "Obat antidiabetes yang mekanisme kerjanya menghambat enzim DPP-4 (Dipeptidyl Peptidase-4) adalah...",
+    "options": [
+      "Empagliflozin",
+      "Pioglitazone",
+      "Sitagliptin",
+      "Acarbose",
+      "Glimepiride"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "9",
+    "question": "Seorang pasien datang dengan keluhan mudah lelah, tidak tahan dingin, dan berat badan naik 5 kg dalam 3 bulan. Hasil: TSH 12,5 mIU/L (tinggi), FT4 0,5 ng/dL (rendah). Diagnosis yang paling tepat adalah...",
+    "options": [
+      "Hipertiroidisme primer",
+      "Tiroiditis de Quervain",
+      "Graves disease",
+      "Hipotiroidisme primer",
+      "Eutiroid"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "10",
+    "question": "Pemeriksaan yang paling tepat untuk menilai kontrol glikemik jangka panjang (2–3 bulan terakhir) pada pasien DM adalah...",
+    "options": [
+      "Gula darah sewaktu",
+      "Gula darah puasa",
+      "Gula darah 2 jam post-prandial",
+      "Fruktosamin",
+      "HbA1c"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "11",
+    "question": "Mekanisme kerja obat golongan statin adalah...",
+    "options": [
+      "Menghambat enzim HMG-CoA reduktase di hati sehingga menurunkan sintesis kolesterol",
+      "Menghambat penyerapan kolesterol di usus melalui NPC1L1",
+      "Mengaktivasi enzim lipoprotein lipase melalui PPAR-alfa",
+      "Menghambat PCSK9",
+      "Meningkatkan ekskresi asam empedu"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "12",
+    "question": "Pasien laki-laki 58 tahun pasca infark miokard akut. LDL saat ini 130 mg/dL. Target LDL untuk risiko sangat tinggi (very high risk) menurut panduan terkini adalah...",
+    "options": [
+      "LDL < 130 mg/dL",
+      "LDL < 100 mg/dL",
+      "LDL < 70 mg/dL",
+      "LDL < 55 mg/dL",
+      "LDL < 40 mg/dL"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "13",
+    "question": "Niacin (asam nikotinat) menurunkan trigliserida dan meningkatkan HDL terutama melalui mekanisme...",
+    "options": [
+      "Menghambat HMG-CoA reduktase",
+      "Mengaktivasi PPAR-alfa di otot dan hati",
+      "Menghambat absorpsi kolesterol di usus",
+      "Meningkatkan sekresi asam empedu",
+      "Menghambat mobilisasi asam lemak bebas dari jaringan adiposa dan menurunkan produksi VLDL di hati"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "14",
+    "question": "Efek samping paling umum yang membuat pasien sering menghentikan terapi statin adalah...",
+    "options": [
+      "Hepatotoksisitas berat",
+      "Neuropati perifer",
+      "Mialgia (nyeri otot) hingga miopati",
+      "Gagal ginjal akut",
+      "Hipotensi ortostatik"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "15",
+    "question": "Kondisi dislipidemia manakah yang paling tepat ditangani utama dengan golongan fibrat?",
+    "options": [
+      "Hiperkolesterolemia murni dengan LDL sangat tinggi",
+      "HDL rendah dengan LDL normal",
+      "Campuran hiperkolesterolemia dan hipertrigliseridemia ringan",
+      "Hipertrigliseridemia berat (TG > 500 mg/dL) dengan risiko pankreatitis",
+      "Semua kondisi dislipidemia tanpa terkecuali"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "16",
+    "question": "Sindrom frailty pada lansia didefinisikan sebagai...",
+    "options": [
+      "Adanya penyakit kronis lebih dari tiga pada satu pasien lansia",
+      "Penurunan fungsi kognitif yang memenuhi kriteria demensia",
+      "Gangguan mobilitas akibat osteoporosis yang sudah menyebabkan fraktur",
+      "Malnutrisi dengan IMT < 18,5 kg/m²",
+      "Kondisi kerentanan fisiologis yang meningkatkan risiko disabilitas, rawat inap, dan kematian, ditandai penurunan cadangan fungsional"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "17",
+    "question": "Perubahan fisiologis yang terjadi pada sistem muskuloskeletal lansia dan berkontribusi terhadap risiko jatuh adalah...",
+    "options": [
+      "Sarkopenia, penurunan densitas tulang, gangguan propriosepsi, dan keseimbangan memburuk",
+      "Massa otot meningkat, kepadatan tulang meningkat",
+      "Reflek tendon meningkat, keseimbangan membaik",
+      "Massa lemak menurun, massa otot stabil",
+      "Tidak ada perubahan bermakna pada otot, hanya tulang yang berubah"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "18",
+    "question": "Instrumen yang paling tepat untuk penilaian risiko jatuh pada lansia rawat inap adalah...",
+    "options": [
+      "MMSE (Mini Mental State Examination)",
+      "MNA (Mini Nutritional Assessment)",
+      "Morse Fall Scale atau Hendrich II Fall Risk Model",
+      "GCS (Glasgow Coma Scale)",
+      "NIHSS (National Institutes of Health Stroke Scale)"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "19",
+    "question": "Prinsip prescribing 'START' pada lansia merujuk pada...",
+    "options": [
+      "Daftar obat yang harus DIHENTIKAN pada lansia",
+      "Daftar obat yang SEHARUSNYA diberikan namun sering terlewat (underutilization)",
+      "Panduan untuk memulai terapi antihipertensi",
+      "Skrining tanda-tanda demensia dini",
+      "Sistem pencatatan pemakaian obat pada lansia"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "20",
+    "question": "Seorang pasien lansia 78 tahun mengalami kebingungan mendadak pasca operasi, tidak mengenali keluarga, agitasi hilang timbul. Sebelumnya tidak ada riwayat gangguan kognitif. Diagnosis yang paling tepat adalah...",
+    "options": [
+      "Delirium pasca operasi",
+      "Demensia Alzheimer",
+      "Demensia vaskular",
+      "Depresi berat",
+      "Demensia Lewy body"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "21",
+    "question": "Komplikasi yang paling sering terjadi akibat imobilisasi berkepanjangan pada lansia adalah...",
+    "options": [
+      "Hiperglikemia, hipertensi, dan hiperkolesterolemia",
+      "Dekubitus, pneumonia aspirasi, trombosis vena dalam, dan kontraktur",
+      "Penurunan fungsi tiroid dan hipoparatiroid",
+      "Peningkatan massa otot kompensatoris",
+      "Gangguan penglihatan dan pendengaran"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "22",
+    "question": "Vaksin influenza pada lansia direkomendasikan karena...",
+    "options": [
+      "Lansia berisiko tinggi mengalami komplikasi berat influenza; imunisasi menurunkan mortalitas secara bermakna",
+      "Lansia memiliki sistem imun yang lebih kuat dalam merespons vaksin",
+      "Vaksinasi influenza memberikan perlindungan seumur hidup",
+      "Influenza pada lansia selalu asimtomatik",
+      "Hanya diberikan pada lansia di atas 80 tahun"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "23",
+    "question": "'Comprehensive Geriatric Assessment' (CGA) meliputi penilaian bidang...",
+    "options": [
+      "Hanya pemeriksaan fisik dan laboratorium",
+      "Hanya kognitif dan fungsional ADL",
+      "Medis, fungsional, kognitif, psikologis, sosial-ekonomi, dan lingkungan secara terpadu",
+      "Hanya penilaian gizi dan aktivitas fisik",
+      "Diagnosis penyakit kronis dan farmakoterapi saja"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "24",
+    "question": "Lansia dengan polifarmasi (≥5 obat) berisiko mengalami masalah berikut, KECUALI...",
+    "options": [
+      "Interaksi obat yang merugikan",
+      "Efek samping yang lebih sering",
+      "Non-adherence terhadap pengobatan",
+      "Peningkatan efektivitas terapi secara proporsional dengan jumlah obat",
+      "Peningkatan risiko jatuh akibat efek sedatif atau hipotensi ortostatik"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "25",
+    "question": "Kebutuhan energi harian rata-rata menurut AKG 2019 untuk wanita dewasa usia 30–49 tahun adalah...",
+    "options": [
+      "2150 kkal",
+      "1800 kkal",
+      "2000 kkal",
+      "2500 kkal",
+      "2800 kkal"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "26",
+    "question": "Pasien DM tipe 2, laki-laki, 60 kg, tinggi 165 cm. Berdasarkan rumus Broca, berat badan idealnya adalah...",
+    "options": [
+      "50 kg",
+      "55 kg",
+      "65 kg",
+      "70 kg",
+      "60 kg"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "27",
+    "question": "Jenis lemak yang sebaiknya dibatasi pada diet penderita dislipidemia dan DM adalah...",
+    "options": [
+      "Lemak tak jenuh tunggal (MUFA)",
+      "Lemak tak jenuh ganda (PUFA) omega-3",
+      "Lemak nabati dari kacang-kacangan",
+      "DHA dan EPA dari ikan laut",
+      "Lemak jenuh dan trans fatty acid"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "28",
+    "question": "Prinsip 'piringku' untuk penderita DM dalam satu porsi makan utama adalah...",
+    "options": [
+      "Setengah piring sayuran, seperempat karbohidrat kompleks, seperempat lauk (protein)",
+      "Setengah piring karbohidrat, setengah piring lauk pauk",
+      "Seperempat piring sayuran, tiga perempat piring karbohidrat",
+      "Satu piring penuh karbohidrat saja",
+      "Tidak ada aturan standar yang berlaku"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "29",
+    "question": "Batas IMT yang dikategorikan underweight pada lansia berdasarkan standar Asia-Pasifik adalah...",
+    "options": [
+      "IMT < 18,5 kg/m²",
+      "IMT < 23,0 kg/m²",
+      "IMT < 17,0 kg/m²",
+      "IMT < 16,0 kg/m²",
+      "IMT < 21,0 kg/m²"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "30",
+    "question": "Seorang pasien lansia 70 tahun mengalami penurunan berat badan 5 kg dalam 3 bulan tanpa sebab jelas. Pendekatan pertama yang harus dilakukan dokter adalah...",
+    "options": [
+      "Langsung memberikan suplemen nutrisi oral",
+      "Meresepkan kortikosteroid untuk stimulasi nafsu makan",
+      "Melakukan skrining penyebab organik (keganasan, depresi, gangguan menelan, efek samping obat)",
+      "Rawat inap untuk nutrisi parenteral total",
+      "Hanya memantau berat badan setiap bulan"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "31",
+    "question": "Seorang pekerja pabrik kimia terpapar uap bahan kimia bertahun-tahun dan mengalami asma kerja. Jenis bahaya yang dialaminya termasuk dalam kategori...",
+    "options": [
+      "Bahaya mekanis",
+      "Bahaya fisik",
+      "Bahaya biologis",
+      "Bahaya kimia",
+      "Bahaya psikologis"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "32",
+    "question": "Nilai Ambang Batas (NAB) dalam kedokteran kerja didefinisikan sebagai...",
+    "options": [
+      "Kadar maksimum absolut yang tidak boleh terlampaui sedetik pun",
+      "Nilai batas yang sama untuk semua jenis paparan bahaya kerja",
+      "Standar internasional WHO yang wajib diterapkan di semua negara",
+      "Batas paparan yang hanya berlaku untuk bahaya kimia saja",
+      "Kadar atau intensitas faktor bahaya yang dapat ditoleransi pekerja sehat selama 8 jam/hari dan 40 jam/minggu"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "33",
+    "question": "Hirarki pengendalian risiko K3 dari yang paling efektif ke paling kurang efektif adalah...",
+    "options": [
+      "Eliminasi → substitusi → rekayasa teknik → administratif → APD",
+      "APD → rekayasa teknik → substitusi → eliminasi → administratif",
+      "Administratif → APD → eliminasi → substitusi → rekayasa",
+      "Substitusi → eliminasi → APD → rekayasa → administratif",
+      "Rekayasa → administratif → APD → eliminasi → substitusi"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "34",
+    "question": "Penyakit akibat kerja yang disebabkan oleh paparan debu silika di paru-paru disebut...",
+    "options": [
+      "Silikosis",
+      "Asbestosis",
+      "Antrakosis",
+      "Bisinoosis",
+      "Bagasosis"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "35",
+    "question": "Jaminan Kecelakaan Kerja (JKK) BPJS Ketenagakerjaan mencakup manfaat berupa...",
+    "options": [
+      "Hanya penggantian biaya pengobatan rawat jalan",
+      "Hanya tunjangan hari tua",
+      "Biaya pengobatan, santunan cacat, santunan kematian, dan rehabilitasi akibat kecelakaan kerja",
+      "Hanya asuransi jiwa",
+      "Hanya biaya rawat inap di RS pemerintah"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "36",
+    "question": "Gambaran MRI khas pada demensia Alzheimer adalah...",
+    "options": [
+      "Hipertensitas substantia nigra bilateral pada T2",
+      "White matter hyperintensity periventrikuler yang luas",
+      "Absent swallow tail sign pada potongan aksial",
+      "Atrofi hipokampus dan korteks temporal medial bilateral",
+      "Perdarahan mikro (microbleed) multipel"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "37",
+    "question": "Obat golongan kolinesterase inhibitor (misalnya donepezil) diindikasikan untuk demensia tahap...",
+    "options": [
+      "Berat saja",
+      "Sangat berat dengan gangguan motorik",
+      "Hanya untuk demensia vaskular",
+      "Tidak ada indikasi yang jelas",
+      "Ringan hingga sedang (mild to moderate)"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "38",
+    "question": "Ciri utama yang membedakan demensia Lewy body dari demensia Alzheimer adalah...",
+    "options": [
+      "Adanya riwayat stroke sebelumnya",
+      "Onset akut dan fluktuasi harian kesadaran, halusinasi visual yang nyata, dan parkinsonisme bersamaan dengan demensia",
+      "Gangguan perilaku menonjol tanpa gangguan memori",
+      "Adanya atrofi temporal medial bilateral pada MRI",
+      "Tidak ada perbedaan klinis yang bermakna"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "39",
+    "question": "Seorang pasien lansia 80 tahun, tinggal sendiri, bingung dan tidak mengenali lingkungan sejak 3 hari pasca operasi katarak. Mengonsumsi antihistamin untuk gatal. Faktor yang paling mungkin mencetuskan kondisi ini adalah...",
+    "options": [
+      "Onset demensia Alzheimer yang baru",
+      "Efek anestesi permanen",
+      "Gangguan pendengaran akibat penuaan",
+      "Obat antihistamin bersifat antikolinergik ditambah stres pasca operasi sebagai pencetus delirium",
+      "Defisiensi vitamin B12"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "40",
+    "question": "Instrumen skrining kognitif singkat yang dapat dilakukan dalam waktu kurang dari 10 menit di fasilitas pelayanan primer adalah...",
+    "options": [
+      "Neuropsychological battery test (NBT)",
+      "Mini-Cog (clock drawing + 3-word recall)",
+      "Weschler Adult Intelligence Scale (WAIS)",
+      "Rey Auditory Verbal Learning Test (RAVLT)",
+      "Wisconsin Card Sorting Test (WCST)"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Neurologi-Geriatri",
+    "img": null
+  },
+  {
+    "id": "41",
+    "question": "Tiroiditis Hashimoto adalah penyakit autoimun yang menyebabkan hipotiroid. Antibodi penanda khasnya adalah...",
+    "options": [
+      "Anti-TSH receptor antibody (TRAb)",
+      "Anti-nuclear antibody (ANA)",
+      "Anti-double stranded DNA (anti-dsDNA)",
+      "Anti-gliadin antibody",
+      "Anti-tiroid peroksidase (Anti-TPO) dan anti-tiroglobulin"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "42",
+    "question": "Pemeriksaan penunjang pertama yang direkomendasikan untuk skrining fungsi tiroid adalah...",
+    "options": [
+      "TSH (Thyroid Stimulating Hormone)",
+      "T3 total",
+      "T4 total",
+      "Free T3",
+      "Skintigrafi tiroid"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "43",
+    "question": "Manifestasi klinis hipoparatiroidisme yang paling khas akibat hipokalsemia adalah...",
+    "options": [
+      "Batu ginjal (nephrolithiasis)",
+      "Nyeri tulang difus dan osteoporosis",
+      "Kelemahan otot proksimal dan psikosis",
+      "Konstipasi berat dan nyeri abdomen",
+      "Tetani, Trousseau sign, Chvostek sign, dan kejang"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "44",
+    "question": "Efek jangka panjang hiperparatiroidisme primer yang tidak ditangani pada tulang adalah...",
+    "options": [
+      "Peningkatan densitas tulang (osteosklerosis)",
+      "Osteoporosis akibat resorpsi tulang berlebihan oleh osteoklas yang diaktivasi PTH",
+      "Osifikasi ektopik pada jaringan lunak",
+      "Fraktur stres pada tulang belakang lumbal saja",
+      "Tidak ada efek pada tulang"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "45",
+    "question": "Seorang lansia laki-laki 72 tahun mengeluh sering ingin buang air kecil mendadak dan tidak dapat ditahan. Tidak ada riwayat gangguan prostat. Jenis inkontinensia yang paling sesuai adalah...",
+    "options": [
+      "Inkontinensia stres",
+      "Inkontinensia overflow",
+      "Inkontinensia fungsional",
+      "Inkontinensia campuran",
+      "Inkontinensia urgensi (urge incontinence)"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "46",
+    "question": "Tatalaksana non-farmakologi pertama untuk inkontinensia urgensi pada lansia adalah...",
+    "options": [
+      "Bladder training (latihan kandung kemih) dan jadwal berkemih terjadwal",
+      "Pemasangan kateter urine menetap",
+      "Pemberian antikolinergik dosis tinggi",
+      "Operasi sling uretra",
+      "Pembatasan cairan total"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "47",
+    "question": "Mengapa pemberian obat pada lansia harus dimulai dengan dosis rendah dan dinaikkan perlahan ('start low, go slow')?",
+    "options": [
+      "Karena lansia memiliki metabolisme yang lebih cepat",
+      "Karena volume distribusi semua jenis obat menurun pada lansia",
+      "Karena semua obat aman pada lansia asal dosisnya rendah",
+      "Karena perubahan farmakokinetik dan farmakodinamik meningkatkan risiko efek toksik pada dosis dewasa muda",
+      "Karena lansia selalu memiliki fungsi ginjal normal"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "48",
+    "question": "Obat yang sebaiknya dihindari pada lansia karena risiko hipotensi ortostatik yang tinggi adalah...",
+    "options": [
+      "Metformin",
+      "Alpha-blocker (misalnya doksazosin) dan nitrat kerja panjang",
+      "Parasetamol",
+      "Amoksisilin",
+      "Omeprazol"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "49",
+    "question": "Interaksi klinis yang paling relevan antara warfarin dan aspirin adalah...",
+    "options": [
+      "Aspirin mengurangi efek antikoagulan warfarin",
+      "Aspirin meningkatkan risiko perdarahan melalui penghambatan agregasi trombosit ditambah efek antikoagulan warfarin",
+      "Aspirin menginaktivasi warfarin di hati",
+      "Tidak ada interaksi klinis yang bermakna",
+      "Aspirin meningkatkan ekskresi warfarin melalui ginjal"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "50",
+    "question": "Efek samping jangka panjang penggunaan kortikosteroid sistemik yang paling sering adalah...",
+    "options": [
+      "Hipoglikemia dan penurunan berat badan",
+      "Hipotiroidisme dan penurunan nafsu makan",
+      "Osteoporosis, hiperglikemia, hipertensi, dan imunosupresi",
+      "Peningkatan massa otot dan penurunan tekanan darah",
+      "Penurunan kadar LDL kolesterol"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Gizi & Nutrisi",
+    "img": null
+  },
+  {
+    "id": "51",
+    "question": "Pada MRI otak, sekuen yang paling sensitif untuk mendeteksi lesi iskemik akut (dalam 6 jam pertama) adalah...",
+    "options": [
+      "T1-weighted (T1W)",
+      "T2-weighted (T2W)",
+      "Gradient Echo (GRE)",
+      "Diffusion Weighted Imaging (DWI)",
+      "T2 FLAIR"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "52",
+    "question": "Pemeriksaan skintigrafi tiroid menggunakan Tc-99m akan menunjukkan gambaran cold nodule yang khas untuk...",
+    "options": [
+      "Adenoma toksik tiroid",
+      "Nodul jinak hiperfungsional",
+      "Nodul tiroid dengan kemungkinan keganasan (karsinoma tiroid)",
+      "Graves disease",
+      "Tiroiditis subakut de Quervain"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "53",
+    "question": "Pemeriksaan kesehatan yang wajib dilakukan sebelum seorang pekerja mulai bekerja di lingkungan dengan paparan bahan berbahaya disebut...",
+    "options": [
+      "Pemeriksaan kesehatan berkala (periodic examination)",
+      "Pemeriksaan kesehatan awal/prakerja (pre-employment examination)",
+      "Pemeriksaan kesehatan pasca pajanan",
+      "Medical check-up rutin",
+      "Pemeriksaan khusus"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "54",
+    "question": "Dermatitis kontak akibat kerja yang terjadi melalui mekanisme imunologis (sensitisasi) disebut...",
+    "options": [
+      "Dermatitis kontak iritan",
+      "Dermatitis kontak alergi",
+      "Dermatitis atopik",
+      "Psoriasis",
+      "Dermatitis seboroik"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "55",
+    "question": "Seorang tenaga kesehatan tertusuk jarum suntik bekas pasien HIV positif. Tindakan pertama yang paling tepat adalah...",
+    "options": [
+      "Menekan luka agar darah keluar lebih banyak",
+      "Mengoleskan alkohol 70% tanpa mencuci",
+      "Menunggu dan memantau gejala selama 1 minggu",
+      "Segera mencuci luka dengan air mengalir dan sabun, laporkan insiden, dan konsultasi untuk profilaksis pasca pajanan (PEP)",
+      "Langsung memulai ARV tanpa evaluasi lebih lanjut"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "56",
+    "question": "Tingkat iuran Jaminan Kecelakaan Kerja (JKK) BPJS Ketenagakerjaan ditentukan berdasarkan...",
+    "options": [
+      "Usia pekerja",
+      "Gaji pokok pekerja saja",
+      "Tingkat risiko pekerjaan (kelompok usaha), antara 0,24%–1,74% dari upah",
+      "Jenis kelamin pekerja",
+      "Lama bekerja"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "57",
+    "question": "Pasien kritis yang tidak dapat menerima asupan enteral disarankan mendapat...",
+    "options": [
+      "Puasa total sampai kondisi stabil",
+      "Nutrisi parenteral total (TPN) melalui akses vena sentral",
+      "Hanya cairan infus dextrose 5%",
+      "Suplemen oral dalam dosis tinggi",
+      "Diet cair per oral segera"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "58",
+    "question": "Vitamin yang berperan sebagai antioksidan dan berpengaruh pada fungsi imunitas serta penyembuhan luka adalah...",
+    "options": [
+      "Vitamin B1 (tiamin)",
+      "Vitamin B12 (sianokobalamin)",
+      "Vitamin C (asam askorbat)",
+      "Vitamin K",
+      "Vitamin B6 (piridoksin)"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "59",
+    "question": "Pasien lansia 75 tahun, IMT 17,2 kg/m², nafsu makan menurun, albumin serum 2,8 g/dL. Status gizi pasien dikategorikan sebagai...",
+    "options": [
+      "Gizi baik",
+      "Risiko malnutrisi",
+      "Overweight",
+      "Malnutrisi protein-energi (Protein Energy Malnutrition)",
+      "Obesitas"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "60",
+    "question": "Asam lemak omega-3 (EPA dan DHA) dari minyak ikan memiliki manfaat klinis utama berupa...",
+    "options": [
+      "Meningkatkan kadar LDL kolesterol",
+      "Meningkatkan resistensi insulin",
+      "Menyebabkan hipertensi",
+      "Tidak memiliki manfaat klinis yang terbukti",
+      "Menurunkan kadar trigliserida dan memiliki efek antiinflamasi"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Farmakologi Klinik",
+    "img": null
+  },
+  {
+    "id": "61",
+    "question": "Ciri pembeda utama antara demensia sejati dan pseudodemensia (depresi) pada lansia adalah...",
+    "options": [
+      "Pada pseudodemensia, pasien mengeluh banyak tentang masalah memorinya dan gejala membaik dengan antidepresan; pada demensia sejati, pasien sering tidak sadar defisit memorinya",
+      "Demensia selalu disertai sedih yang berat, depresi tidak",
+      "Keduanya tidak dapat dibedakan secara klinis",
+      "Depresi selalu ada halusinasi visual, demensia tidak",
+      "Demensia tidak pernah disertai gejala depresi"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "62",
+    "question": "Terapi non-farmakologi yang direkomendasikan untuk depresi ringan-sedang pada lansia adalah...",
+    "options": [
+      "Hanya farmakoterapi dengan SSRI",
+      "Terapi perilaku kognitif (CBT), aktivitas fisik, dan dukungan sosial",
+      "Pemberian benzodiazepine jangka panjang",
+      "Isolasi sosial dan istirahat total",
+      "Electroconvulsive therapy (ECT) sebagai lini pertama"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "63",
+    "question": "Pasien lansia 82 tahun dengan Alzheimer tahap lanjut mengalami agitasi dan perilaku agresif di malam hari (sundowning). Pendekatan pertama yang paling tepat adalah...",
+    "options": [
+      "Langsung memberikan haloperidol dosis tinggi",
+      "Memberikan diazepam untuk sedasi malam",
+      "Merestraint pasien di tempat tidur",
+      "Intervensi non-farmakologi: pencahayaan teratur, rutinitas konsisten, hindari kafein, pendekatan lingkungan",
+      "Menaikkan dosis donepezil"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "64",
+    "question": "Sindrom Cushing yang disebabkan oleh konsumsi kortikosteroid eksogen jangka panjang disebut...",
+    "options": [
+      "Cushing disease",
+      "Cushing syndrome iatrogenik",
+      "ACTH-independent Cushing syndrome primer",
+      "Adrenal hyperplasia",
+      "Nelson syndrome"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "65",
+    "question": "Manifestasi klinis Cushing syndrome yang paling membedakannya dari obesitas biasa adalah...",
+    "options": [
+      "Peningkatan berat badan seluruh tubuh merata",
+      "Distribusi lemak sentral (moon face, buffalo hump, truncal obesity), striae ungu, dan atrofi otot proksimal",
+      "Hipertrigliseridemia saja",
+      "Hipertensi tanpa gejala lain",
+      "Nafsu makan menurun"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "66",
+    "question": "Seorang wanita 35 tahun datang dengan keluhan galaktore, amenore, dan penurunan libido. Kadar prolaktin serum sangat tinggi. Penyebab yang paling mungkin adalah...",
+    "options": [
+      "Hipotiroidisme primer",
+      "Hipertiroidisme",
+      "Prolaktinoma (tumor hipofisis penghasil prolaktin)",
+      "Sindrom ovarium polikistik (PCOS)",
+      "Defisiensi estrogen"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "67",
+    "question": "Terapi definitif yang paling sering dipilih untuk Graves disease dengan kelenjar tiroid yang sangat besar adalah...",
+    "options": [
+      "Pengobatan dengan antitiroid saja seumur hidup",
+      "Kortikosteroid dosis tinggi",
+      "Propanolol dosis tinggi sebagai monoterapi",
+      "Tiroidektomi total atau subtotal",
+      "Terapi iodium radioaktif saja"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "68",
+    "question": "Krisis tiroid (thyroid storm) adalah kedaruratan endokrin yang ditandai oleh...",
+    "options": [
+      "Hipotiroid berat dengan bradikardia dan hipotensi",
+      "Hipoglikemia berat akibat insulin berlebih",
+      "Hiperkalsemia akut akibat hiperparatiroid",
+      "Insufisiensi adrenal akut",
+      "Eksaserbasi hipertiroidisme akut dengan hipertermia, takikardia berat, gangguan kesadaran, dan gagal organ"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "69",
+    "question": "Tujuan utama rehabilitasi medik pada pasien pasca stroke adalah...",
+    "options": [
+      "Menyembuhkan kerusakan neuron secara permanen",
+      "Menghilangkan semua defisit neurologis",
+      "Hanya latihan fisik tanpa intervensi lain",
+      "Memaksimalkan pemulihan fungsi, mencegah komplikasi imobilisasi, dan meningkatkan kemandirian dan kualitas hidup",
+      "Mengembalikan pasien ke kondisi fisik sebelum stroke"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "70",
+    "question": "Latihan keseimbangan dan gait training pada lansia paling tepat dilakukan dengan tujuan...",
+    "options": [
+      "Meningkatkan massa otot hingga setara dewasa muda",
+      "Menghilangkan osteoporosis",
+      "Meningkatkan daya ingat secara langsung",
+      "Menghilangkan nyeri sendi secara permanen",
+      "Menurunkan risiko jatuh dan meningkatkan kepercayaan diri dalam mobilisasi"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "71",
+    "question": "Hipotensi ortostatik pada lansia didefinisikan sebagai penurunan tekanan darah sistolik ≥ 20 mmHg atau diastolik ≥ 10 mmHg dalam...",
+    "options": [
+      "3 menit setelah berdiri dari posisi duduk atau berbaring",
+      "30 menit setelah berbaring",
+      "1 jam setelah bangun tidur",
+      "Segera saat berdiri pada setiap kondisi",
+      "Hanya saat pasien merasa pusing"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "72",
+    "question": "Penyakit yang sering tidak terdiagnosis pada lansia karena presentasinya atipikal disebut dengan istilah...",
+    "options": [
+      "Comorbidity",
+      "Multimorbidity",
+      "Frailty",
+      "Sarcopenia",
+      "Atypical/masked presentation geriatri"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "73",
+    "question": "Prinsip dasar 'primum non nocere' dalam konteks geriatri terutama berkaitan dengan...",
+    "options": [
+      "Memberikan sebanyak mungkin obat untuk mengobati semua penyakit",
+      "Kehati-hatian dalam peresepan untuk menghindari iatrogenik; mengutamakan tidak merugikan pasien",
+      "Menggunakan prosedur invasif sesegera mungkin",
+      "Menghindari semua pengobatan pada lansia",
+      "Mengutamakan keinginan keluarga di atas keinginan pasien"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "74",
+    "question": "Seorang pekerja pabrik semen mengeluh sesak napas semakin memberat dalam 10 tahun. Rontgen toraks: gambaran nodular opasitas di lobus atas bilateral. Diagnosis kerja yang paling tepat adalah...",
+    "options": [
+      "Asma kerja",
+      "TBC paru",
+      "Silikosis",
+      "Asbestosis",
+      "Farmer's lung"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "75",
+    "question": "Pencegahan primer penyakit akibat kerja yang paling efektif adalah...",
+    "options": [
+      "Pemberian APD kepada seluruh pekerja",
+      "Pemeriksaan kesehatan berkala",
+      "Eliminasi atau substitusi agen berbahaya dari lingkungan kerja",
+      "Pengobatan pekerja yang sakit",
+      "Rotasi kerja agar paparan merata"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Kedokteran Kerja",
+    "img": null
+  },
+  {
+    "id": "76",
+    "question": "Seorang pasien DM tipe 2 dengan penyakit ginjal kronis (PGK) stadium 3a (eGFR 45–59). Obat antidiabetes oral yang paling aman adalah...",
+    "options": [
+      "Glibenklamid (sulfonilurea)",
+      "Metformin dapat dilanjutkan dengan pemantauan ketat pada PGK stadium 3a",
+      "SGLT-2 inhibitor dosis tinggi",
+      "Acarbose dosis penuh",
+      "Tidak ada obat oral yang aman sama sekali"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "77",
+    "question": "Pemeriksaan ankle-brachial index (ABI) pada penderita DM digunakan untuk mendeteksi...",
+    "options": [
+      "Nefropati diabetik",
+      "Retinopati diabetik",
+      "Penyakit arteri perifer (PAD) sebagai komplikasi makrovaskular DM",
+      "Neuropati otonom jantung",
+      "Disfungsi ereksi diabetik"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "78",
+    "question": "Target tekanan darah yang direkomendasikan untuk penderita DM tipe 2 dengan proteinuria adalah...",
+    "options": [
+      "< 150/90 mmHg",
+      "< 140/90 mmHg",
+      "< 160/100 mmHg",
+      "< 130/80 mmHg",
+      "< 120/70 mmHg"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "79",
+    "question": "Pemeriksaan funduskopi pada penderita DM dianjurkan untuk deteksi dini...",
+    "options": [
+      "Neuropati perifer diabetik",
+      "Nefropati diabetik",
+      "Retinopati diabetik",
+      "Kardiomiopati diabetik",
+      "Peripheral artery disease"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "80",
+    "question": "Pasien DM tipe 2 mendapat terapi metformin 2x500 mg. Setelah 1 bulan, pasien mengeluh mual, diare, dan tidak nafsu makan. Tindakan yang paling tepat adalah...",
+    "options": [
+      "Menghentikan metformin secara permanen",
+      "Mengganti metformin dengan insulin",
+      "Menambahkan antasida dan teruskan dosis yang sama",
+      "Menurunkan dosis menjadi 1x250 mg permanen",
+      "Mengonsumsi metformin bersama atau setelah makan, dan jika perlu gunakan formulasi extended-release"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "81",
+    "question": "Mekanisme kerja obat pada sistem inkretin adalah...",
+    "options": [
+      "Meningkatkan sekresi insulin yang bergantung glukosa dan menghambat sekresi glukagon",
+      "Menghambat reabsorbsi glukosa di tubulus ginjal",
+      "Meningkatkan sensitivitas insulin di jaringan perifer",
+      "Menghambat enzim alfa-glukosidase di usus halus",
+      "Merangsang sekresi insulin secara konstan tanpa bergantung kadar glukosa"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "82",
+    "question": "Mengapa demam pada lansia bukan merupakan tanda pasti terjadinya infeksi?",
+    "options": [
+      "Seluruh penyakit pada lansia selalu disertai respons demam",
+      "Suhu tubuh basal lansia cenderung lebih rendah dari dewasa muda sehingga respons demam terhadap infeksi berkurang",
+      "Lansia tidak memiliki sistem imun yang dapat merespons infeksi",
+      "Infeksi pada lansia tidak pernah menyebabkan demam sama sekali",
+      "Demam pada lansia selalu disebabkan oleh keganasan, bukan infeksi"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "83",
+    "question": "Perubahan sistem imunologi adaptif pada lansia yang paling benar adalah...",
+    "options": [
+      "Produksi limfosit baru meningkat",
+      "Produksi limfosit baru menurun, naive cell meningkat, memori cell menurun",
+      "Produksi limfosit baru menurun, naive cell berkurang, memori cell meningkat, dan kadar IL-6 meningkat",
+      "Fungsi sel T helper meningkat secara signifikan",
+      "Produksi antibodi meningkat pada lansia"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "84",
+    "question": "Obat yang termasuk dalam kriteria Beers List (obat berpotensi tidak aman untuk lansia) adalah...",
+    "options": [
+      "Metformin",
+      "Benzodiazepine",
+      "Amoksisilin",
+      "Parasetamol",
+      "Omeprazol"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "85",
+    "question": "Kebutuhan cairan harian yang direkomendasikan untuk lansia adalah...",
+    "options": [
+      "2 gelas (~500 mL)",
+      "4 gelas (~1000 mL)",
+      "6 gelas (~1500 mL)",
+      "8 gelas (~2000 mL)",
+      "10 gelas (~2500 mL)"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "86",
+    "question": "Berdasarkan skor MNA (Mini Nutritional Assessment), skor yang menunjukkan risiko malnutrisi pada lansia adalah...",
+    "options": [
+      "0–7 (malnutrisi)",
+      "8–11 (risiko malnutrisi)",
+      "12–14 (normal bawah)",
+      "15–18 (normal)",
+      "19–23 (baik)"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "87",
+    "question": "Ciri khas hipotiroid adalah...",
+    "options": [
+      "Berat badan menurun",
+      "Takikardi",
+      "Tidak tahan panas",
+      "Keringat berlebih",
+      "Konstipasi"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "88",
+    "question": "Obat yang diindikasikan untuk demensia sedang-berat adalah...",
+    "options": [
+      "Galantamine",
+      "Memantine",
+      "Donepezil",
+      "Rivastigmin",
+      "Tacrine"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "89",
+    "question": "Pemeriksaan radiologi terbaik untuk mendeteksi White Matter Hyperintensity (WMH) pada pencitraan otak adalah...",
+    "options": [
+      "CT-Scan",
+      "MRI T1 SE",
+      "MRI T2 SE",
+      "MRI T2 FLAIR",
+      "MRI T1 FLAIR"
+    ],
+    "correct": 3,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "90",
+    "question": "Lokasi patah tulang yang paling sering terjadi pada lansia yang jatuh adalah...",
+    "options": [
+      "Klavikula",
+      "Elbow",
+      "Collum humerus",
+      "Radius-ulna",
+      "Collum femoris"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "91",
+    "question": "Prinsip pemberian insulin prandial yang benar adalah...",
+    "options": [
+      "Diberikan 30–60 menit sebelum makan untuk insulin reguler, atau segera sebelum makan untuk analog insulin",
+      "Diberikan sekali sehari saat tidur malam",
+      "Diberikan dosis tetap tanpa mempertimbangkan asupan karbohidrat",
+      "Dosis langsung maksimal tanpa titrasi",
+      "Diberikan bersamaan dengan insulin basal dalam satu suntikan"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "92",
+    "question": "Efek samping obat antidiabetes yang membuat pasien banyak kencing (poliuria) adalah...",
+    "options": [
+      "Metformin",
+      "Sulfonilurea",
+      "SGLT-2 inhibitor (misalnya empagliflozin)",
+      "Acarbose",
+      "Pioglitazone"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "93",
+    "question": "Mekanisme kerja utama obat golongan asam fibrat adalah...",
+    "options": [
+      "Menghambat HMG-CoA reduktase",
+      "Menghambat absorpsi kolesterol di usus",
+      "Mengaktivasi enzim lipoprotein lipase (LPL) melalui aktivasi PPAR-alfa",
+      "Meningkatkan ekskresi asam empedu",
+      "Menghambat PCSK9"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "94",
+    "question": "Seorang ibu datang dengan keluhan tiba-tiba buang air kecil saat tertawa dan batuk. Urin juga keluar saat melakukan posisi jongkok. Jenis inkontinensia apakah yang dialami?",
+    "options": [
+      "Inkontinensia stres",
+      "Inkontinensia fungsional",
+      "Inkontinensia urgensi",
+      "Inkontinensia luapan (overflow)",
+      "Inkontinensia campuran"
+    ],
+    "correct": 0,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "95",
+    "question": "Sindrom geriatri giants mencakup kondisi berikut...",
+    "options": [
+      "Hipertensi, DM, stroke, dan demensia",
+      "Imobilisasi, instabilitas/jatuh, inkontinensia, gangguan intelektual (4I) ditambah iatrogenik",
+      "Depresi, delirium, demensia, dan disabilitas",
+      "Malnutrisi, osteoporosis, sarcopenia, dan frailty",
+      "Hipotensi ortostatik, atrial fibrilasi, gagal jantung, dan gagal ginjal"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Geriatri",
+    "img": null
+  },
+  {
+    "id": "96",
+    "question": "Bentuk aktif vitamin D yang digunakan dalam metabolisme kalsium adalah...",
+    "options": [
+      "Kolekalsiferol (D3)",
+      "Ergokalsiferol (D2)",
+      "Kalsitriol (1,25-dihidroksikolekalsiferol)",
+      "Kalsidiol (25-hidroksikolekalsiferol)",
+      "Provitamin D"
+    ],
+    "correct": 2,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "97",
+    "question": "Ketusuk jarum suntik (needlestick injury) termasuk dalam bahaya...",
+    "options": [
+      "Biologis",
+      "Mekanis",
+      "Bio-mekanis",
+      "Tekanan",
+      "Radiasi"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "98",
+    "question": "Tempat penyuntikan insulin yang paling dipilih/direkomendasikan adalah...",
+    "options": [
+      "Deltoid",
+      "Paha bagian dalam",
+      "Lengan bagian dalam",
+      "Sekitar umbilikus",
+      "Abdomen"
+    ],
+    "correct": 4,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "99",
+    "question": "Kriteria prediabetes berdasarkan HbA1c adalah...",
+    "options": [
+      "HbA1c < 5,7%",
+      "HbA1c 5,7–6,4%",
+      "HbA1c ≥ 6,5%",
+      "HbA1c > 7%",
+      "HbA1c 4–5,6%"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "100",
+    "question": "Yang membedakan delirium dengan depresi adalah...",
+    "options": [
+      "Delirium memiliki onset lebih lambat dibanding depresi",
+      "Delirium ditandai dengan fluktuasi kesadaran, gangguan atensi akut; depresi ditandai mood tertekan tanpa gangguan kesadaran",
+      "Depresi selalu disertai gangguan kesadaran",
+      "Delirium hanya terjadi pada lansia",
+      "Keduanya memiliki gambaran klinis yang identik"
+    ],
+    "correct": 1,
+    "explanation": "",
+    "category": "Endokrin-Metabolik",
+    "img": null
+  },
+  {
+    "id": "G1",
+    "question": "Berdasarkan gambar klinis USG di bawah, apakah diagnosis yang paling tepat?",
+    "options": [
+      "Graves Disease",
+      "Tiroiditis De Quervain",
+      "Parkinson Disease",
+      "Cushing Syndrome",
+      "Hashimoto Thyroiditis"
+    ],
+    "correct": 4,
+    "explanation": "Gambaran USG tiroid menunjukkan pola hipoechoic difus dengan tekstur heterogen - khas untuk Tiroiditis Hashimoto (penyakit autoimun tiroid). Graves Disease biasanya disertai peningkatan vaskularisasi (thyroid inferno) pada color Doppler.",
+    "category": "Endokrin-Metabolik (Bergambar)",
+    "img": "img1"
+  },
+  {
+    "id": "G2",
+    "question": "Perhatikan grafik Population by age group, World di atas. Manakah pernyataan yang paling benar?",
+    "options": [
+      "Proyeksi data masa depan berdasarkan skenario rendah PBB",
+      "Kelompok Under-25s diproyeksikan terus meningkat hingga tahun 2100",
+      "Kelompok Ages 25-64 adalah kelompok dengan populasi terbesar pada tahun 2020 dan diproyeksikan terus tumbuh",
+      "Total populasi dunia diproyeksikan menurun setelah tahun 2050",
+      "Kelompok Ages 65+ memiliki populasi lebih besar dari Under-15s sejak tahun 1950"
+    ],
+    "correct": 2,
+    "explanation": "Kelompok Ages 25-64 memiliki populasi terbesar (~4 miliar) pada 2020 dan diproyeksikan terus meningkat. Under-25s justru mendatar/menurun setelah 2020.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G3",
+    "question": "Perhatikan grafik populasi dunia berdasarkan kelompok usia. Manakah pernyataan yang benar mengenai proyeksi Ages 65+?",
+    "options": [
+      "Data dalam grafik ini bersumber dari World Bank",
+      "Kelompok Ages 25-64 mengalami penurunan sejak tahun 1980",
+      "Total populasi dunia sudah mencapai 10 miliar sebelum tahun 2000",
+      "Populasi Under-5s terus meningkat tajam dari 1950 hingga 2100",
+      "Kelompok Ages 65+ diproyeksikan melampaui Under-15s sebelum tahun 2100"
+    ],
+    "correct": 4,
+    "explanation": "Grafik menunjukkan Ages 65+ memiliki tren meningkat tajam dan diproyeksikan mendekati/melampaui Under-15s sebelum 2100, mencerminkan populasi menua global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G4",
+    "question": "Berdasarkan grafik populasi dunia, pernyataan yang benar tentang kelompok Under-15s adalah...",
+    "options": [
+      "Semua kelompok usia menunjukkan tren peningkatan hingga 2100",
+      "Kelompok Ages 25-64 diproyeksikan menurun drastis setelah 2060",
+      "Proyeksi berbasis skenario tinggi PBB",
+      "Kelompok Under-15s mencapai puncaknya sekitar tahun 2020 lalu diproyeksikan menurun atau mendatar",
+      "Populasi total dunia pada tahun 2020 sudah melampaui 10 miliar"
+    ],
+    "correct": 3,
+    "explanation": "Grafik menunjukkan Under-15s mencapai plateau sekitar 2020 kemudian diproyeksikan mendatar/sedikit menurun - refleksi penurunan fertilitas global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G5",
+    "question": "Berdasarkan grafik populasi dunia, manakah yang paling benar mengenai proyeksi Ages 65+?",
+    "options": [
+      "Proyeksi menunjukkan Ages 65+ akan menjadi kelompok dengan pertumbuhan paling signifikan dibanding kelompok usia muda",
+      "Kelompok Under-5s diproyeksikan mencapai 2 miliar pada tahun 2100",
+      "Pada tahun 1950, kelompok Under-25s memiliki populasi lebih kecil dari Ages 25-64",
+      "Data bersumber dari World Bank bukan PBB",
+      "Total populasi dunia diproyeksikan stabil di angka 8 miliar setelah tahun 2020"
+    ],
+    "correct": 0,
+    "explanation": "Proyeksi grafik menunjukkan Ages 65+ memiliki pertumbuhan paling cepat dibanding semua kelompok usia muda, mencerminkan populasi menua global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G2e",
+    "question": "Berdasarkan grafik Population by age group, World di atas, proyeksi demografis masa depan yang ditampilkan dalam grafik tersebut didasarkan pada...",
+    "options": [
+      "Proyeksi didasarkan pada skenario tinggi PBB",
+      "Proyeksi bersumber dari data World Bank",
+      "Proyeksi didasarkan pada model statistik Institut Kependudukan nasional",
+      "Proyeksi menggunakan skenario rendah PBB berdasarkan fertilitas menurun",
+      "Proyeksi masa depan didasarkan pada skenario medium PBB"
+    ],
+    "correct": 4,
+    "explanation": "Proyeksi populasi dunia dalam grafik didasarkan pada skenario medium PBB (UN World Population Prospects - medium variant) yang merupakan proyeksi standar paling sering digunakan untuk perencanaan kebijakan global.",
+    "category": "Demografi & Epidemiologi (Bergambar)",
+    "img": "img2"
+  },
+  {
+    "id": "G6",
+    "question": "Perhatikan gambar potongan otak di atas. Gambaran tersebut dikenal sebagai Mickey Mouse sign. Diagnosis yang paling sesuai adalah...",
+    "options": [
+      "Tiroiditis Hashimoto",
+      "Alzheimer",
+      "Demensia vaskular",
+      "Parkinson",
+      "Graves disease"
+    ],
+    "correct": 3,
+    "explanation": "Mickey Mouse sign pada MRI otak menunjukkan atrofi tegmentum mesensefalon dengan pembesaran ventrikel III - gambaran khas pada Penyakit Parkinson dan kondisi terkait (PSP).",
+    "category": "Neurologi-Geriatri (Bergambar)",
+    "img": "img3"
+  },
+  {
+    "id": "G7",
+    "question": "Berdasarkan gambar klinis USG di atas, apakah diagnosis yang paling tepat?",
+    "options": [
+      "Hashimoto Thyroiditis",
+      "Tiroiditis De Quervain",
+      "Graves Disease",
+      "Noduler Thyroid",
+      "Karsinoma Tiroid Papiler"
+    ],
+    "correct": 2,
+    "explanation": "Gambaran USG tiroid menunjukkan peningkatan vaskularisasi difus (thyroid inferno) pada color Doppler dengan kelenjar tiroid yang membesar secara difus - khas untuk Graves Disease.",
+    "category": "Endokrin-Metabolik (Bergambar)",
+    "img": "img4"
+  }
+]

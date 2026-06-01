@@ -9,5 +9,8 @@ export default defineConfig({
     tailwindcss(),
     viteReact(),
   ],
+  // Set this to your GitHub repo name if deploying to:
+  // https://<username>.github.io/<repo-name>/
+  // Leave as '/' if deploying to a custom domain or user/org page
   base: './',
 })

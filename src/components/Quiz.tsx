@@ -824,6 +824,9 @@ function NameForm({ onSubmit, questionCount }: {
           <p style={{ color: '#484f58', fontSize: '0.68rem', marginTop: '6px' }}>
             Jika kosong, kamu akan tercatat sebagai <em style={{ color: '#6e7681' }}>Anonim Yang Malas Ngasih Nama</em>
           </p>
+          <p style={{ color: '#484f58', fontSize: '0.68rem', marginTop: '6px' }}>
+            Gak perlu nama real kok
+          </p>
         </div>
 
         {/* Start button */}

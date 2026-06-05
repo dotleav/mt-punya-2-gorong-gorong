@@ -873,9 +873,9 @@ function NameForm({ onSubmit, questionCount }: {
             onBlur={e => { (e.currentTarget as HTMLInputElement).style.borderColor = '#30363d' }}
           />
           <p style={{ color: '#484f58', fontSize: '0.68rem', marginTop: '6px' }}>
-            Jika kosong, kamu akan tercatat sebagai <em style={{ color: '#6e7681' }}>Anonim Yang Malas Ngasih Nama</em>
+            Jika kosong, kamu akan tercatat sebagai <em style={{ color: '#6e7681' }}>Pemalas 1, Pemalas 2, dan seterusnya</em>
           </p>
-          <p style={{ color: '#484f58', fontSize: '0.68rem', marginTop: '6px' }}>
+          <p style={{ color: '#6e7681', fontSize: '0.68rem', marginTop: '6px' }}>
             Gak perlu nama real kok
           </p>
         </div>

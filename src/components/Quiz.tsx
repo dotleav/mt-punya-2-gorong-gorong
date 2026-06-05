@@ -197,7 +197,56 @@ function submitResult(result: QuizResult) {
 
 // ── Root Component ─────────────────────────────────────────────────────────────
 
+// ── CSS Injection ──────────────────────────────────────────────────────────────
+
+function useInjectStyles() {
+  useEffect(() => {
+    const id = 'quiz-injected-styles'
+    if (document.getElementById(id)) return
+    const el = document.createElement('style')
+    el.id = id
+    el.textContent = `
+      @keyframes quizFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes explanationSlide {
+        from { opacity: 0; transform: translateY(-6px); max-height: 0; }
+        to   { opacity: 1; transform: translateY(0);   max-height: 600px; }
+      }
+      @keyframes timerPulse {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0.55; }
+      }
+      @keyframes timeoutFlash {
+        0%, 100% { background-color: #161b22; }
+        30%      { background-color: #ef444415; }
+      }
+      .quiz-fade-in {
+        animation: quizFadeIn 0.3s ease both;
+      }
+      .explanation-slide {
+        animation: explanationSlide 0.35s ease both;
+        overflow: hidden;
+      }
+      .timer-pulse {
+        animation: timerPulse 0.8s ease-in-out infinite;
+      }
+      .timeout-flash {
+        animation: timeoutFlash 0.6s ease;
+      }
+      .option-hoverable:hover {
+        background-color: #2d333b !important;
+        border-color: #484f58 !important;
+      }
+    `
+    document.head.appendChild(el)
+    return () => { el.remove() }
+  }, [])
+}
+
 export default function Quiz() {
+  useInjectStyles()
   const [questions, setQuestions] = useState<Question[]>([])
   const [quizMode, setQuizMode]   = useState<QuizMode>('biasa')
 
@@ -1395,7 +1444,7 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
   onAnswer: (idx: number) => void
 }) {
   const catColor  = CATEGORY_COLORS[q.category] ?? 'bg-slate-500/20 text-slate-300 border-slate-500/30'
-  const isAnswered = answer !== null
+  const isAnswered = answer !== null && answer !== undefined
 
   const optStyle = (idx: number): CSSProperties => {
     if (!isAnswered) {

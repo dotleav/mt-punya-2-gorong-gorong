@@ -112,6 +112,10 @@ export default function Quiz() {
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
   const [isMuted, setIsMuted] = useState(false)
+  // Ref selalu sinkron dengan isMuted — dibaca oleh playSound
+  // agar tidak terjadi stale closure di dalam useCallback maupun setState.
+  const isMutedRef = useRef(false)
+  useEffect(() => { isMutedRef.current = isMuted }, [isMuted])
   useEffect(() => {
     audioBenar.current = new Audio('./benar.mp3')
     audioSalah.current = new Audio('./salah.mp3')
@@ -119,13 +123,13 @@ export default function Quiz() {
     audioSalah.current.load()
   }, [])
 
-  function playSound(correct: boolean) {
-    if (isMuted) return
+  const playSound = useCallback((correct: boolean) => {
+    if (isMutedRef.current) return
     const audio = correct ? audioBenar.current : audioSalah.current
     if (!audio) return
     audio.currentTime = 0
     audio.play().catch(() => { /* blocked by browser policy */ })
-  }
+  }, [])
 
   // Ref for beforeunload
   const isTentamenRunningRef = useRef(false)

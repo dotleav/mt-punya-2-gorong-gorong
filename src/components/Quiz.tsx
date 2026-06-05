@@ -90,6 +90,15 @@ function clearBiasa() {
   try { localStorage.removeItem(LS_KEY) } catch { /* noop */ }
 }
 
+// Participant name persists across all sessions on the same device
+const LS_NAME_KEY = 'quiz_mt_participant_name'
+function loadSavedName(): string {
+  try { return localStorage.getItem(LS_NAME_KEY) ?? '' } catch { return '' }
+}
+function saveName(name: string) {
+  try { localStorage.setItem(LS_NAME_KEY, name) } catch { /* noop */ }
+}
+
 // ── Session ID helper ──────────────────────────────────────────────────────────
 
 function generateSessionId(): string {
@@ -162,8 +171,8 @@ export default function Quiz() {
   const [biasaShuffleOn, setBiasaShuffleOn]       = useState(false)
   const [biasaQuestions, setBiasaQuestions]       = useState<Question[]>([])
   const [biasaAnswers, setBiasaAnswers]           = useState<AnswerState[]>([])
-  const [participantName, setParticipantName]     = useState('')
-  const [nameConfirmed, setNameConfirmed]         = useState(false)
+  const [participantName, setParticipantName]     = useState(() => loadSavedName())
+  const [nameConfirmed, setNameConfirmed]         = useState(() => loadSavedName().trim().length > 0)
   const [sessionId, setSessionId]                 = useState(() => generateSessionId())
 
   // Mode Tentamen state — ephemeral, no storage
@@ -222,13 +231,19 @@ export default function Quiz() {
   // ── beforeunload: beacon biasa progress + tentamen warning ──
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      // Send biasa progress beacon when mode is biasa and quiz started
-      if (quizMode === 'biasa') {
-        const s = biasaStateRef.current
-        const answered = s.answers.filter(a => a !== null).length
-        if (s.nameConfirmed && answered > 0 && s.questions.length > 0) {
-          const result = buildResult(s.participantName, s.sessionId, s.questions, s.answers)
-          submitResult(result)
+      // Send biasa progress beacon whenever there is at least 1 answered question
+      // This fires even if quiz is incomplete — by design.
+      const s = biasaStateRef.current
+      const answered = s.answers.filter(a => a !== null).length
+      if (answered > 0 && s.questions.length > 0) {
+        const result = buildResult(s.participantName, s.sessionId, s.questions, s.answers)
+        submitResult(result)
+        // Rotate sessionId in localStorage so next open is a fresh session ID
+        // but answers + name are still preserved in LS_KEY
+        const saved = loadBiasa()
+        if (saved) {
+          const nextId = generateSessionId()
+          saveBiasa({ ...saved, sessionId: nextId })
         }
       }
       // Warn tentamen
@@ -257,10 +272,23 @@ export default function Quiz() {
       setBiasaShuffleOn(saved.shuffleOn)
       setBiasaQuestions(saved.activeQuestions)
       setBiasaAnswers(saved.answers)
-      setParticipantName(saved.participantName ?? '')
+      // Name comes from persistent LS_NAME_KEY, not session data
+      const persistedName = loadSavedName()
+      setParticipantName(persistedName)
       setNameConfirmed(true)
+      // sessionId was already rotated in beforeunload, use the new one
       setSessionId(saved.sessionId ?? generateSessionId())
       setBiasaActive(true)
+    } else {
+      // No saved session — if we have a saved name, skip name form and start fresh
+      const persistedName = loadSavedName()
+      if (persistedName.trim()) {
+        setParticipantName(persistedName)
+        setNameConfirmed(true)
+        const newSessionId = generateSessionId()
+        setSessionId(newSessionId)
+        startBiasa(questions, biasaCategory, biasaShuffleOn)
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questions])
@@ -324,12 +352,12 @@ export default function Quiz() {
   // ── Mode Biasa handlers ──
   const handleResetBiasa = useCallback(() => {
     clearBiasa()
+    // Also clear persisted name so they enter name again on next start
+    try { localStorage.removeItem(LS_NAME_KEY) } catch { /* noop */ }
     const newSessionId = generateSessionId()
     setSessionId(newSessionId)
-    const qs = buildQuestions(biasaCategory, biasaShuffleOn, questions)
-    if (!qs.length) return
-    setBiasaQuestions(qs)
-    setBiasaAnswers(new Array(qs.length).fill(null))
+    setBiasaQuestions([])
+    setBiasaAnswers([])
     setNameConfirmed(false)
     setParticipantName('')
     setBiasaActive(false)
@@ -367,6 +395,7 @@ export default function Quiz() {
   const handleNameSubmit = useCallback((name: string) => {
     setParticipantName(name)
     setNameConfirmed(true)
+    saveName(name)
     const newSessionId = generateSessionId()
     setSessionId(newSessionId)
     startBiasa(questions, biasaCategory, biasaShuffleOn)

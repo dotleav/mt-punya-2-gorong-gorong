@@ -340,11 +340,11 @@ export default function Quiz() {
       const s = biasaStateRef.current
       const answered = Object.values(s.answerMap).filter(a => a !== null && a !== undefined).length
       if (answered > 0 && s.allQuestions.length > 0) {
-        const effectiveSessionId = s.shuffleOn ? s.shuffleSessionId : s.sessionId
-        const result = buildResult(s.participantName, effectiveSessionId, s.allQuestions, s.answerMap)
+        // Selalu buat session ID baru → Apps Script selalu append baris baru,
+        // tidak pernah overwrite data yang sudah ada di spreadsheet
+        const unloadSessionId = 'ul_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+        const result = buildResult(s.participantName, unloadSessionId, s.allQuestions, s.answerMap)
         submitResult(result)
-        // sessionId TIDAK di-rotate, agar Apps Script bisa update baris yang sama
-        // (identifikasi responden via nama + sessionId yang persisten per device)
       }
       // Warn tentamen
       if (isTentamenRunningRef.current) {
@@ -450,25 +450,22 @@ export default function Quiz() {
 
   // ── Mode Biasa handlers ──
   const handleResetBiasa = useCallback(() => {
-    // Kirim data ke spreadsheet sebelum reset, sama seperti saat tab ditutup
+    // Kirim data ke spreadsheet sebelum reset
     const s = biasaStateRef.current
     const answered = Object.values(s.answerMap).filter(a => a !== null && a !== undefined).length
+    // Selalu rotate session agar setiap pengiriman menjadi baris baru di spreadsheet
+    const resetSessionId = rotateShuffleSessionId()
+    setShuffleSessionId(resetSessionId)
     if (answered > 0 && s.allQuestions.length > 0) {
-      const effectiveSessionId = s.shuffleOn ? s.shuffleSessionId : s.sessionId
-      const result = buildResult(s.participantName, effectiveSessionId, s.allQuestions, s.answerMap)
+      const result = buildResult(s.participantName, resetSessionId, s.allQuestions, s.answerMap)
       submitResult(result)
     }
     clearBiasa()
-    try { localStorage.removeItem(LS_NAME_KEY) } catch { /* noop */ }
-    // Rotate shuffleSessionId saat reset → Apps Script akan buat baris baru
-    // (bukan update baris lama), sehingga riwayat sesi sebelumnya tetap tersimpan
-    const newShuffleId = rotateShuffleSessionId()
-    setShuffleSessionId(newShuffleId)
+    // Nama TIDAK dihapus — peserta hanya boleh memasukkan nama sekali per device
     setBiasaQuestions([])
     setAnswerMap({})
-    setNameConfirmed(false)
-    setParticipantName('')
-    setBiasaActive(false)
+    // nameConfirmed & participantName tetap → langsung mulai tanpa form nama
+    startBiasa(questions, biasaCategory, biasaShuffleOn)
   }, [biasaCategory, biasaShuffleOn, buildQuestions, questions])
 
   const handleBiasaFilterChange = (cat: string) => {

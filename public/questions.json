@@ -1,5 +1,5 @@
 [
-  {
+{
     "id": "1",
     "question": "Mekanisme kerja obat golongan GLP-1 receptor agonist (misalnya semaglutide) adalah...",
     "options": [
@@ -10,7 +10,7 @@
       "Mengaktifkan PPAR-gamma untuk meningkatkan sensitivitas insulin"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Obat golongan GLP-1 receptor agonist bekerja meniru hormon inkretin alami, yang secara spesifik meningkatkan sekresi insulin saat glukosa darah tinggi (dependen-glukosa), menekan pelepasan glukagon, dan memperlambat pengosongan lambung.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -25,7 +25,7 @@
       "Memberikan insulin prandial dosis tinggi langsung"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Target HbA1c pada pasien DM tipe 2 umumnya adalah < 7,0%. Jika target tidak tercapai setelah 3 bulan monoterapi dengan dosis yang memadai, panduan klinis merekomendasikan penambahan agen antidiabetes oral kedua (dual therapy).",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -40,7 +40,7 @@
       "Tidak boleh sama sekali mengonsumsi karbohidrat"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Rekomendasi diet untuk penderita DM tipe 2 tetap membutuhkan asupan karbohidrat sebesar 45–65% dari total kalori harian, dengan penekanan pada sumber karbohidrat kompleks yang kaya serat dan indeks glikemik rendah.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -55,7 +55,7 @@
       "Pioglitazone"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Kondisi pusing dan berdebar dengan GDS 52 mg/dL menunjukkan hipoglikemia. Obat golongan sulfonilurea (seperti glibenklamid) merangsang sekresi insulin secara konstan tanpa memandang kadar glukosa, sehingga sangat berisiko memicu hipoglikemia jika pasien telat makan.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -70,7 +70,7 @@
       "Penurunan berat badan, takikardi, tidak tahan panas, keringat berlebih"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Hipertiroidisme menyebabkan peningkatan drastis pada laju metabolisme basal, yang secara klinis bermanifestasi sebagai takikardi, penurunan berat badan meski nafsu makan baik, tidak tahan panas, tremor, dan keringat berlebih.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -85,7 +85,7 @@
       "GDP ≥ 200 mg/dL"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Berdasarkan kriteria standar (seperti dari ADA atau PERKENI), Gula Darah Puasa (GDP) ≥ 126 mg/dL pada dua kali pemeriksaan yang berbeda merupakan kriteria definitif untuk diagnosis diabetes melitus.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -100,7 +100,7 @@
       "Anemia mikrositik, LED meningkat, albumin normal"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Sindrom metabolik adalah sekumpulan faktor risiko kardiometabolik yang terdiri atas obesitas sentral (lingkar pinggang meningkat), dislipidemia aterogenik (Trigliserida tinggi, HDL rendah), hipertensi, dan intoleransi glukosa atau resistensi insulin.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -115,7 +115,7 @@
       "Glimepiride"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Obat berakhiran '-gliptin' seperti sitagliptin adalah golongan inhibitor DPP-4. Enzim ini secara normal memecah hormon inkretin (GLP-1), sehingga hambatannya akan memperpanjang efek kerja inkretin endogen.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -130,7 +130,7 @@
       "Eutiroid"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Kondisi hipotiroidisme primer ditandai oleh disfungsi pada kelenjar tiroid yang menyebabkan produksi hormon tiroid (FT4) rendah. Akibat kurangnya umpan balik negatif, kelenjar pituitari memproduksi TSH dalam jumlah tinggi.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -145,7 +145,7 @@
       "HbA1c"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Pemeriksaan Hemoglobin A1c (HbA1c) merefleksikan rata-rata persentase glukosa yang berikatan dengan sel darah merah. Karena usia eritrosit berkisar 120 hari, nilai ini sangat akurat untuk menilai kontrol glikemik 2-3 bulan ke belakang.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -160,7 +160,7 @@
       "Meningkatkan ekskresi asam empedu"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Statin berfungsi sebagai penghambat kompetitif terhadap enzim HMG-CoA reduktase, enzim penentu laju utama dalam jalur biosintesis kolesterol di hati.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -175,7 +175,7 @@
       "LDL < 40 mg/dL"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Pasien paska infark miokard akut terkategori dalam risiko kardiovaskular sangat tinggi (very high risk). Menurut panduan ESC/EAS terbaru, target terapi lipid ditekankan untuk mencapai LDL < 55 mg/dL.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -190,7 +190,7 @@
       "Menghambat mobilisasi asam lemak bebas dari jaringan adiposa dan menurunkan produksi VLDL di hati"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Asam nikotinat (Niacin) bekerja dengan menghambat lipolisis di jaringan adiposa. Hal ini secara drastis mengurangi suplai asam lemak bebas ke hati, yang pada akhirnya menurunkan sintesis trigliserida dan VLDL.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -205,7 +205,7 @@
       "Hipotensi ortostatik"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Statin-associated muscle symptoms (SAMS), yang mencakup mialgia (nyeri otot tanpa peningkatan enzim) hingga miopati, adalah efek samping dominan dan keluhan utama yang memicu pasien berhenti menggunakan obat ini.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -220,7 +220,7 @@
       "Semua kondisi dislipidemia tanpa terkecuali"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Obat golongan fibrat merupakan agen pilihan utama untuk hipertrigliseridemia derajat berat (kadar Trigliserida > 500 mg/dL) karena efektivitasnya yang tinggi dalam mencegah komplikasi pankreatitis akut.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -235,7 +235,7 @@
       "Kondisi kerentanan fisiologis yang meningkatkan risiko disabilitas, rawat inap, dan kematian, ditandai penurunan cadangan fungsional"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Sindrom Frailty (kerentanan) adalah kondisi penurunan cadangan dan fungsi multiorgan fisiologis. Lansia dengan frailty sangat rentan terhadap kegagalan homeostatis mendadak akibat stresor sekecil apa pun.",
     "category": "Geriatri",
     "img": null
   },
@@ -250,7 +250,7 @@
       "Tidak ada perubahan bermakna pada otot, hanya tulang yang berubah"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Proses penuaan intrinsik memicu atrofi otot skeletal (sarkopenia), penurunan kepadatan tulang (osteoporosis), serta degenerasi jalur proprioseptif dan vestibular yang bersama-sama menjadi kontributor utama tingginya risiko jatuh.",
     "category": "Geriatri",
     "img": null
   },
@@ -265,7 +265,7 @@
       "NIHSS (National Institutes of Health Stroke Scale)"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Morse Fall Scale (MFS) adalah instrumen skrining standar yang tervalidasi dan secara luas digunakan dalam tatanan rawat inap untuk memprediksi probabilitas risiko jatuh pasien dewasa dan lansia.",
     "category": "Geriatri",
     "img": null
   },
@@ -280,7 +280,7 @@
       "Sistem pencatatan pemakaian obat pada lansia"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Kriteria START (Screening Tool to Alert doctors to Right Treatment) adalah panduan pendamping kriteria STOPP, yang berfokus mendeteksi underprescribing dengan mendaftar obat-obatan dengan indikasi kuat pada lansia namun sering kali tidak diberikan.",
     "category": "Geriatri",
     "img": null
   },
@@ -295,7 +295,7 @@
       "Demensia Lewy body"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Karakteristik delirium adalah onset kesadaran berfluktuasi yang muncul mendadak (akut), sering kali bermanifestasi berupa kebingungan dan agitasi yang dipicu oleh trauma fisik (seperti prosedur pembedahan atau infeksi).",
     "category": "Geriatri",
     "img": null
   },
@@ -310,7 +310,7 @@
       "Gangguan penglihatan dan pendengaran"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Sindrom imobilisasi bed rest lama berujung pada ulkus dekubitus akibat tekanan mekanis, statis vena yang memicu Deep Vein Thrombosis (DVT), pneumonia hipostatik/aspirasi, dan kontraktur fleksor akibat tidak adanya rentang gerak pasif.",
     "category": "Geriatri",
     "img": null
   },
@@ -325,7 +325,7 @@
       "Hanya diberikan pada lansia di atas 80 tahun"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Penuaan sistem imun (immunosenescence) membuat infeksi influenza yang biasanya ringan menjadi pintu masuk komplikasi parah (seperti pneumonia sekunder). Vaksinasi wajib dilakukan rutin karena nyata menurunkan morbiditas dan mortalitas.",
     "category": "Geriatri",
     "img": null
   },
@@ -340,7 +340,7 @@
       "Diagnosis penyakit kronis dan farmakoterapi saja"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "CGA adalah pendekatan diagnostik holistik interdisipliner untuk mengevaluasi lansia renta (frail), dengan cakupan meliputi parameter klinis biomedis, status fungsional (kemandirian), kesehatan mental (kognisi dan mood), dan kondisi sosio-lingkungannya.",
     "category": "Geriatri",
     "img": null
   },
@@ -355,7 +355,7 @@
       "Peningkatan risiko jatuh akibat efek sedatif atau hipotensi ortostatik"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Polifarmasi secara nyata meningkatkan risiko efek samping, interaksi, serta menurunkan tingkat kepatuhan pasien. Sebaliknya, bertambahnya obat justru jarang berbanding lurus dengan peningkatkan efektivitas klinis secara proporsional.",
     "category": "Geriatri",
     "img": null
   },
@@ -370,7 +370,7 @@
       "2800 kkal"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Menurut Angka Kecukupan Gizi (AKG) Kementerian Kesehatan RI tahun 2019, rata-rata kecukupan energi bagi perempuan berusia 30-49 tahun ditetapkan sebesar 2.150 kilokalori (kkal) per hari.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -385,7 +385,7 @@
       "60 kg"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Rumus Broca standar menghitung Berat Badan Ideal pria: (Tinggi Badan - 100) dikurangi 10% dari hasil tersebut. Namun, untuk aplikasi klinis DM dengan rentang batas kompensasi, 60 kg merupakan nilai pembulatan proporsional paling mendekati standar (65 - 6,5 = 58,5 kg).",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -400,7 +400,7 @@
       "Lemak jenuh dan trans fatty acid"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Lemak jenuh (SFA) dan lemak trans memicu pembentukan plak aterosklerosis dengan meningkatkan kolesterol LDL dan menurunkan kolesterol pelindung HDL, sehingga konsumsinya perlu dikontrol ketat pada penderita gangguan kardiometabolik.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -415,7 +415,7 @@
       "Tidak ada aturan standar yang berlaku"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Metode piring makanku untuk pengontrolan indeks glikemik merekomendasikan: 50% piring diisi sayur-sayuran non-tepung, 25% untuk sumber protein rendah lemak, dan sisanya 25% digunakan untuk karbohidrat kompleks berserat.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -430,7 +430,7 @@
       "IMT < 21,0 kg/m²"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Berdasarkan pedoman klasifikasi Indeks Massa Tubuh kriteria Asia-Pasifik, ambang batas yang mendefinisikan kurus (underweight) untuk semua populasi dewasa adalah skor < 18,5 kg/m².",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -445,7 +445,7 @@
       "Hanya memantau berat badan setiap bulan"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Unintentional weight loss pada lansia merupakan tanda bahaya (red flag). Evaluasi menyeluruh terhadap etiologi sekunder seperti penyakit organik, disfagia, gangguan afek, maupun efek farmakologis harus didahulukan dari penanganan simtomatik.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -460,7 +460,7 @@
       "Bahaya psikologis"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Pajanan terhadap substansi seperti uap pelarut, gas, debu industri, atau cairan toksik di lingkungan kerja terklasifikasi sebagai paparan bahaya kimia (chemical hazards).",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -475,7 +475,7 @@
       "Kadar atau intensitas faktor bahaya yang dapat ditoleransi pekerja sehat selama 8 jam/hari dan 40 jam/minggu"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Nilai Ambang Batas (NAB/TLV) adalah standar intensitas rata-rata paparan pajanan bahaya yang dianggap aman bila diterima oleh pekerja hampir setiap hari (8 jam per hari, 40 jam sepekan) tanpa mengakibatkan kelainan kesehatan atau penyakit.",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -490,7 +490,7 @@
       "Rekayasa → administratif → APD → eliminasi → substitusi"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Prinsip hirarki hierarki pengendalian bahaya K3 menempatkan eliminasi bahaya di urutan pertama dan yang paling efektif, diturunkan melalui substitusi, isolasi teknis/rekayasa, rekayasa regulasi administratif, dan menjadikan penggunaan APD sebagai perlindungan batas akhir (least effective).",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -505,7 +505,7 @@
       "Bagasosis"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Inhalasi kronik terhadap partikel debu silika kristalin bebas dapat memicu respon fibrosis interstisial nodular ireversibel di paru-paru, yang dikenal sebagai silikosis.",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -520,7 +520,7 @@
       "Hanya biaya rawat inap di RS pemerintah"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Program Jaminan Kecelakaan Kerja (JKK) merupakan perlindungan komprehensif bagi pekerja yang menanggung biaya pemeliharaan kesehatan paripurna, pembayaran santunan cacat sebagian/total, santunan kematian, hingga fasilitas Return to Work (rehabilitasi).",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -535,7 +535,7 @@
       "Perdarahan mikro (microbleed) multipel"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Penyusutan progresif pada area otak lobus temporal bagian medial, khususnya pada struktur hipokampus secara bilateral merupakan penanda neuroimaging (MRI) yang paling sensitif berkorelasi dengan demensia Alzheimer.",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -550,7 +550,7 @@
       "Ringan hingga sedang (mild to moderate)"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Golongan Acetylcholinesterase Inhibitor (AChEI) seperti Donepezil diindikasikan spesifik pada pengobatan simtomatik fase defisit kognitif demensia Alzheimer yang masih dalam kategori derajat ringan hingga menengah (mild to moderate).",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -565,7 +565,7 @@
       "Tidak ada perbedaan klinis yang bermakna"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Tiga fitur klinis inti untuk mendiagnosis Demensia Lewy Body (DLB) adalah fluktuasi kognitif yang memengaruhi kesadaran dan fungsi luhur, kemunculan halusinasi visual yang kompleks dan rekuren, dan tanda-tanda ekstrapiramidal motorik (parkinsonisme).",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -580,7 +580,7 @@
       "Defisiensi vitamin B12"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Kondisi penurunan kesadaran fungsional akut pada lansia ini adalah delirium, yang umumnya direntankan oleh penggunaan agen antikolinergik seperti antihistamin generasi pertama, lalu dipicu/di-presipitasi oleh peristiwa fisiologis mendadak seperti operasi.",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -595,7 +595,7 @@
       "Wisconsin Card Sorting Test (WCST)"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Mini-Cog merupakan sebuah perangkat uji klinis singkat yang tidak dipengaruhi tingkat pendidikan pasien, menggabungkan ingatan 3 memori (3-word recall) dengan kemampuan visuospasial eksekutif (Clock Drawing Test), dan ideal diaplikasikan dalam setting praktik sibuk (< 3 menit).",
     "category": "Neurologi-Geriatri",
     "img": null
   },
@@ -610,7 +610,7 @@
       "Anti-tiroid peroksidase (Anti-TPO) dan anti-tiroglobulin"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Penyakit autoimun Hashimoto ditandai dengan destruksi limfositik kelenjar tiroid yang difasilitasi oleh produksi antibodi patologis dengan target spesifik tinggi pada enzim Tiroid Peroksidase (TPO) dan struktural Tiroglobulin (Tg).",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -625,7 +625,7 @@
       "Skintigrafi tiroid"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Kadar Thyroid Stimulating Hormone (TSH) serum merupakan uji parameter tunggal terbaik dan paling dapat diandalkan untuk mendeteksi awal terjadinya hipertiroidisme maupun hipotiroidisme karena sensitivitas umpan baliknya yang sangat tinggi.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -640,7 +640,7 @@
       "Tetani, Trousseau sign, Chvostek sign, dan kejang"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Defisit hormon paratiroid menyebabkan penipisan tajam ion kalsium serum (hipokalsemia), yang akan meningkatkan eksitabilitas sel saraf otot dengan memunculkan kram, kejang karpopedal (Trousseau sign), dan kontraksi fasial (Chvostek sign).",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -655,7 +655,7 @@
       "Tidak ada efek pada tulang"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Peningkatan abnormal sirkulasi hormon Paratiroid menstimulasi proliferasi sel osteoklas, yang pada akhirnya mempromosikan demineralisasi kalsium dari matriks tulang terus-menerus sehingga menyebabkan pengeroposan jaringan tulang dan fraktur patologis.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -670,7 +670,7 @@
       "Inkontinensia urgensi (urge incontinence)"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Keinginan berkemih yang sangat mendadak, sulit ditunda, dan disertai kebocoran sebelum sampai ke kamar mandi adalah manifestasi klasik dari Inkontinensia Urgensi akibat kandung kemih terlalu aktif (Overactive Bladder/OAB).",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -685,7 +685,7 @@
       "Pembatasan cairan total"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Lini utama terapi konservatif untuk inkontinensia urgensi harus difokuskan pada modifikasi fungsi fisiologis, dengan intervensi perilaku seperti latihan memanjangkan interval waktu berkemih (Bladder training) dikombinasikan edukasi otot dasar panggul.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -700,7 +700,7 @@
       "Karena lansia selalu memiliki fungsi ginjal normal"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Perubahan farmakokinetik yang menyertai usia tua (seperti laju filtrasi glomerulus yang turun, enzim hepatik lambat) berakibat menumpuknya sisa dosis yang meningkatkan sensitivitas obat dengan risiko efek samping berlebih.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -715,7 +715,7 @@
       "Omeprazol"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Obat golongan penyekat alfa-adrenergik secara masif melebarkan pembuluh darah tepi. Lansia dengan refleks kompensasi baroreseptor lamban akan rawan mengalami penurunan tekanan darah saat berdiri, yang berujung pada pingsan mendadak atau insiden jatuh.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -730,7 +730,7 @@
       "Aspirin meningkatkan ekskresi warfarin melalui ginjal"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Penggunaan bersamaan obat antiplatelet dengan antikoagulan kuat menargetkan mekanisme hemostatik di dua jalur yang terpisah. Kombinasi yang tumpang tindih ini secara drastis menguatkan kemungkinan terjadinya resiko perdarahan fatal.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -745,7 +745,7 @@
       "Penurunan kadar LDL kolesterol"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Durasi panjang terapi kortikosteroid menghasilkan sindroma iatrogenik yang mereplikasi gambaran hiperkortisolisme, meliputi hilangnya mineralisasi tulang (osteoporosis), intoleransi glukosa, peningkatan volume dan tekanan vaskular, serta depresiasi repons kebal host.",
     "category": "Gizi & Nutrisi",
     "img": null
   },
@@ -760,7 +760,7 @@
       "T2 FLAIR"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Rangkaian resonansi Diffusion Weighted Imaging (DWI) adalah teknik neuro-diagnostik utama untuk stroke iskemik. DWI menyoroti molekul air yang berhenti bergerak dalam sel otak akibat edema sitotoksik dan anoksia selular pada hitungan menit setelah serangan.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -775,7 +775,7 @@
       "Tiroiditis subakut de Quervain"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Sebuah nodul yang muncul tanpa afinitas atau penyerapan materi radioisotop disebut cold nodule. Jaringan tiroid amorf ini sering kali bukan entitas penghasil hormon jinak, dan lebih terasosiasi secara statistik terhadap insiden keganasan karsinoma.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -790,7 +790,7 @@
       "Pemeriksaan khusus"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Prosedur evaluasi standar pada tahap rekrutmen ini diwajibkan untuk merekam dan menetapkan standar awal kesehatan individu, mengidentifikasi kontraindikasi pekerjaan, serta mencegah komplikasi jika individu berpotensi terekspos bahan yang tidak bersesuaian di kemudian hari.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -805,7 +805,7 @@
       "Dermatitis seboroik"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Dermatitis Kontak Alergi didorong oleh respons hipersensitivitas termediasi sel (Tipe IV) tertunda yang timbul dari pembentukan antibodi spesifik paska pertemuan atau sensitisasi awal terhadap alergen kimia industri tertentu.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -820,7 +820,7 @@
       "Langsung memulai ARV tanpa evaluasi lebih lanjut"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Langkah mitigasi infeksi absolut adalah membiarkan luka teraliri di bawah kran tanpa memberikan tekanan tambahan (mencegah desakan virus lebih dalam), mencuci aseptis, dan wajib berujung pada pendaftaran program profilaksis pasca-pajanan untuk memperkecil risiko konversi serologis.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -835,7 +835,7 @@
       "Lama bekerja"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Persentase beban iuran untuk JKK bersifat fluktuatif serta distrukturkan berbanding lurus berdasarkan kategori penggolongan tingkat bahaya risiko kerja pada perusahaan bersangkutan, dengan nilai premi mulai dari 0,24% hingga 1,74% kali nominal upah bulanan pekerja.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -850,7 +850,7 @@
       "Diet cair per oral segera"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Kelumpuhan motilitas pencernaan, hambatan absorbsi mekanis pada trakus digestifus, maupun syok berkepanjangan pada perawatan intensif membutuhkan jalan pintas dukungan nutrisi invasif (Total Parenteral Nutrition) melalui sirkulasi sentral vena demi mempertahankan fungsi kelangsungan hidup.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -865,7 +865,7 @@
       "Vitamin B6 (piridoksin)"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Asam askorbat (Vitamin C) esensial dalam menyediakan elektron hidrogen kepada enzim kolagen, sekaligus memfungsikan pertahanan antioksidatif terhadap radikal bebas demi mencegah perlambatan reepitelisasi pada fase perbaikan atau maturasi jaringan cedera.",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -880,7 +880,7 @@
       "Obesitas"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Kombinasi parameter antropometri yang kurus kering (IMT < 18,5) dikonfirmasi secara klinis bersama turunnya protein utama dalam darah (Hipoalbuminemia < 3,0 g/dL) mencerminkan kondisi defisiensi berat kalori dan protein (Protein Energy Malnutrition).",
     "category": "Farmakologi Klinik",
     "img": null
   },
@@ -895,12 +895,12 @@
       "Menurunkan kadar trigliserida dan memiliki efek antiinflamasi"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Fraksi asam lemak majemuk tak jenuh Omega-3 menurunkan sintesis partikel VLDL di hati sehingga berkontribusi menekan tingginya fraksi trigliserida; selain itu omega-3 juga mensintesis senyawa pro-resolving yang bermanfaat menjaga fungsi plak antiinflamasi kardiak.",
     "category": "Farmakologi Klinik",
     "img": null
   },
   {
-    "id": "61",
+"id": "61",
     "question": "Ciri pembeda utama antara demensia sejati dan pseudodemensia (depresi) pada lansia adalah...",
     "options": [
       "Pada pseudodemensia, pasien mengeluh banyak tentang masalah memorinya dan gejala membaik dengan antidepresan; pada demensia sejati, pasien sering tidak sadar defisit memorinya",
@@ -910,7 +910,7 @@
       "Demensia tidak pernah disertai gejala depresi"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Pseudodemensia (depresi pada lansia yang menyerupai demensia) khas ditandai oleh keluhan memori yang berlebihan oleh pasien (insight pasien masih sangat baik) dan fungsi kognitif dapat membaik signifikan dengan terapi antidepresan. Sebaliknya, pasien demensia organik sering mengalami anosognosia (tidak menyadari defisit kognitifnya sendiri).",
     "category": "Geriatri",
     "img": null
   },
@@ -925,7 +925,7 @@
       "Electroconvulsive therapy (ECT) sebagai lini pertama"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Untuk depresi derajat ringan hingga sedang pada pasien geriatri, lini pertama tatalaksana sangat menekankan intervensi non-farmakologi seperti Terapi Perilaku Kognitif (CBT), perbaikan gaya hidup melalui aktivitas fisik rutin, serta penguatan dukungan sosial keluarga untuk menghindari polifarmasi.",
     "category": "Geriatri",
     "img": null
   },
@@ -940,7 +940,7 @@
       "Menaikkan dosis donepezil"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Sindrom sundowning (memburuknya agitasi di sore/malam hari) pada demensia harus selalu ditangani dengan manipulasi lingkungan dan perilaku terlebih dahulu. Mengoptimalkan pencahayaan ruangan, menerapkan rutinitas harian yang prediktabel, dan menghindari stimulan adalah kunci utama sebelum mempertimbangkan antipsikotik yang berisiko.",
     "category": "Geriatri",
     "img": null
   },
@@ -955,7 +955,7 @@
       "Nelson syndrome"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Penyebab paling umum dari Sindrom Cushing di masyarakat adalah bersifat iatrogenik, yakni akibat paparan paparan obat glukokortikoid sintesis eksogen (seperti deksametason atau prednison) secara kronis yang mengakibatkan efek sistemik kelebihan kortisol.",
     "category": "Geriatri",
     "img": null
   },
@@ -970,7 +970,7 @@
       "Nafsu makan menurun"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Berbeda dengan obesitas umum yang merata, kelebihan kortisol pada Sindrom Cushing akan meregulasi redistribusi lemak secara sentral ke wajah (moon face) dan tengkuk (buffalo hump), sementara anggota gerak mengalami kelemahan otot proksimal, ditambah penipisan jaringan ikat yang memunculkan striae berwarna ungu lebar.",
     "category": "Geriatri",
     "img": null
   },
@@ -985,7 +985,7 @@
       "Defisiensi estrogen"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Kemunculan trias klinis amenorea (terhentinya siklus menstruasi), galaktorea (keluarnya air susu ibu di luar siklus menyusui), dan disfungsi libido pada wanita muda disertai hiperprolaktinemia adalah karakteristik utama dari prolaktinoma, sebuah adenoma fungsional pada kelenjar pituitari.",
     "category": "Geriatri",
     "img": null
   },
@@ -1000,7 +1000,7 @@
       "Terapi iodium radioaktif saja"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Pada Penyakit Graves yang disertai pembesaran kelenjar (goiter) tiroid yang masif, indikasi kompresi mekanis (menekan jalan napas/esofagus), atau nodul curiga ganas, tindakan bedah pengangkatan tiroid (tiroidektomi) merupakan terapi definitif pilihan di atas antitiroid oral maupun ablasi iodium radioaktif.",
     "category": "Geriatri",
     "img": null
   },
@@ -1015,7 +1015,7 @@
       "Eksaserbasi hipertiroidisme akut dengan hipertermia, takikardia berat, gangguan kesadaran, dan gagal organ"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Krisis tiroid adalah luapan toksikostikosis sistemik eksaserbasi akut yang mengancam nyawa. Ini bermanifestasi berupa hipermetabolisme ekstrem: demam sangat tinggi (hipertermia), takikardia berat atau fibrilasi atrium, muntah-diare, hingga penurunan kesadaran (koma) akibat gagal jantung kongestif akut.",
     "category": "Geriatri",
     "img": null
   },
@@ -1030,7 +1030,7 @@
       "Mengembalikan pasien ke kondisi fisik sebelum stroke"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Rehabilitasi medik tidak bertugas menghidupkan jaringan otak yang telah infark, melainkan melatih jaras neuroplastisitas untuk memaksimalkan adaptasi fungsi gerak yang tersisa, menghindari penyulit tirah baring (seperti kontraktur/dekubitus), dan seoptimal mungkin mengembalikan kemandirian aktivitas fisik pasien.",
     "category": "Geriatri",
     "img": null
   },
@@ -1045,7 +1045,7 @@
       "Menurunkan risiko jatuh dan meningkatkan kepercayaan diri dalam mobilisasi"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Gangguan keseimbangan dan ayunan gait yang tidak stabil adalah prediktor paling kuat untuk kejadian jatuh pada lansia. Intervensi latihan proprioseptif dan postur difokuskan untuk memperbaiki stabilitas, menurunkan insiden jatuh, serta mengatasi fobia gerak.",
     "category": "Geriatri",
     "img": null
   },
@@ -1060,7 +1060,7 @@
       "Hanya saat pasien merasa pusing"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Hipotensi ortostatik (postural) didiagnosis secara klinis apabila terdapat kemerosotan tekanan sistolik minimal 20 mmHg atau tekanan diastolik minimal 10 mmHg yang terekam pada 3 menit pertama masa observasi saat pasien beralih ke posisi berdiri tegak.",
     "category": "Geriatri",
     "img": null
   },
@@ -1075,7 +1075,7 @@
       "Atypical/masked presentation geriatri"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Seiring penuaan, hilangnya cadangan homeostatis organ menyebabkan penyakit muncul dalam rupa yang melenceng dari standar klasik kedokteran umum (Atypical presentation). Contohnya infark miokard tanpa nyeri dada atau pneumonia hanya bermanifestasi berupa delirium tanpa demam.",
     "category": "Geriatri",
     "img": null
   },
@@ -1090,7 +1090,7 @@
       "Mengutamakan keinginan keluarga di atas keinginan pasien"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Dalam merawat pasien geriatri, komplikasi akibat prosedur medis atau efek obat (penyakit iatrogenik) sangat rentan terjadi. Oleh karena itu, prinsip etik 'Primum non nocere' (pertama-tama, jangan melukai/merugikan) menuntut dokter untuk sangat rasional mengukur risiko versus manfaat dari setiap intervensi.",
     "category": "Geriatri",
     "img": null
   },
@@ -1105,7 +1105,7 @@
       "Farmer's lung"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Pajanan jangka panjang terhadap debu silika kristalin, yang banyak ditemui di pabrik semen, pertambangan, dan pemotongan batu, memicu pneumokoniosis. Gambaran radiologis khasnya adalah opasitas nodular berbatas tegas yang menyebar secara bilateral, khususnya dominan di lapangan atas paru (Silikosis).",
     "category": "Kedokteran Kerja",
     "img": null
   },
@@ -1120,7 +1120,7 @@
       "Rotasi kerja agar paparan merata"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Berdasarkan hirarki manajemen pengendalian risiko K3, strategi perlindungan paripurna yang duduk di puncak hierarki paling efektif adalah Eliminasi (menghilangkan sumber risiko secara total) atau Substitusi (mengganti material beracun dengan yang lebih aman). APD merupakan tameng lapis terakhir.",
     "category": "Kedokteran Kerja",
     "img": null
   },
@@ -1135,7 +1135,7 @@
       "Tidak ada obat oral yang aman sama sekali"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Berdasarkan panduan tata laksana DM terbaru, Metformin masih dianggap aman dan dapat dipertahankan penggunaannya bagi pasien dengan disfungsi ginjal stadium 3a (LFG 45-59 ml/menit), asalkan dilakukan pemantauan lab rutin. Dosis baru harus dihentikan/disesuaikan ketat jika LFG turun mendekati 30 ml/menit.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1150,7 +1150,7 @@
       "Disfungsi ereksi diabetik"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Ankle-Brachial Index (ABI) adalah prosedur diagnostik non-invasif lini depan yang membandingkan tekanan darah di pergelangan kaki dengan lengan. Rasio ini mendeteksi penyumbatan aterosklerotik makrovaskular yang khas untuk Penyakit Arteri Perifer (PAD) pada kaki penderita diabetes.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1158,14 +1158,14 @@
     "id": "78",
     "question": "Target tekanan darah yang direkomendasikan untuk penderita DM tipe 2 dengan proteinuria adalah...",
     "options": [
-      "< 150/90 mmHg",
-      "< 140/90 mmHg",
-      "< 160/100 mmHg",
-      "< 130/80 mmHg",
-      "< 120/70 mmHg"
+      " < 150/90 mmHg",
+      " < 140/90 mmHg",
+      " < 160/100 mmHg",
+      " < 130/80 mmHg",
+      " < 120/70 mmHg"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Pada individu dengan diabetes melitus yang telah mengalami kerusakan struktural ginjal yang dibuktikan dengan adanya tumpahan protein (albuminuria), target tekanan darah menjadi lebih protektif dan agresif, yakni dipertahankan < 130/80 mmHg demi menunda laju perburukan gagal ginjal stadium akhir.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1180,7 +1180,7 @@
       "Peripheral artery disease"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Funduskopi okular digunakan sebagai perangkat skrining visual wajib tahunan pada penderita diabetes. Tujuannya adalah untuk memetakan defek pembuluh darah mikrovaskular mata sedini mungkin dan menemukan lesi komplikasi dari Retinopati Diabetik yang berpotensi menjadi kebutaan asimptomatik.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1195,7 +1195,7 @@
       "Mengonsumsi metformin bersama atau setelah makan, dan jika perlu gunakan formulasi extended-release"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Efek samping gastrointestinal memengaruhi hampir sepertiga pasien pada inisiasi Metformin awal. Gangguan ini sering kali membaik dengan modifikasi diet, yaitu meminumnya saat perut terisi usai makan penuh, atau mengalihkan ke sediaan farmakologis Extended-Release (XR) yang lebih lambat diserap usus.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1210,7 +1210,7 @@
       "Merangsang sekresi insulin secara konstan tanpa bergantung kadar glukosa"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Obat endokrinologis berbasis inkretin (seperti GLP-1 agonis atau penghambat DPP-4) bekerja fisiologis seperti alarm glukosa; hormon ini merangsang rilis pankreas secara 'smart' di mana insulin hanya dikeluarkan secara substansial jika gula darah melambung seusai asupan glukosa (glucose-dependent).",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1225,7 +1225,7 @@
       "Demam pada lansia selalu disebabkan oleh keganasan, bukan infeksi"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Termoregulasi hipotalamus yang tumpul pada lansia membuat rerata suhu basal tubuh mereka lebih rendah. Saat masuk patogen infeksi (seperti pneumonia atau ISK), respon imun memproduksi pirogen endogen lambat, sehingga tubuh mereka mungkin tak pernah berhasil mencapai ambang suhu 'demam' klasik klinis (≥ 38,0 C).",
     "category": "Geriatri",
     "img": null
   },
@@ -1240,7 +1240,7 @@
       "Produksi antibodi meningkat pada lansia"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Immunosenescence berdampak pada involusi/penyusutan timus yang memangkas drastis produksi limfosit baru (sel naif merosot). Akibat paparan patogen bertahun-tahun, lansia mengakumulasi populasi sel limfosit memori sembari terjebak dalam proses inflammaging (kadar sitokin inflamasi harian seperti IL-6 selalu tinggi secara sistemik).",
     "category": "Geriatri",
     "img": null
   },
@@ -1255,7 +1255,7 @@
       "Omeprazol"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Obat-obatan psikotropika Benzodiazepine adalah agen kardinal dalam Beers Criteria of Potentially Inappropriate Medication. Pasalnya, lansia memiliki perlambatan klirens metabolik yang menjadikan obat ini mudah meracuni susunan saraf pusat, memancing kebingungan, ataksia motorik, delirium, dan jatuh.",
     "category": "Geriatri",
     "img": null
   },
@@ -1270,7 +1270,7 @@
       "10 gelas (~2500 mL)"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Pada lansia yang sehat tanpa hambatan klinis ginjal atau jantung, panduan asupan hidrasi umumnya merekomendasikan target pemasukan 2.000 mL (sekitar 8 gelas) per hari. Hal ini demi mencegah hipotensi, disfungsi ginjal pra-renal akut, serta kompensasi menurunnya refleks osmoreseptor dahaga.",
     "category": "Geriatri",
     "img": null
   },
@@ -1285,7 +1285,7 @@
       "19–23 (baik)"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Dalam interpretasi kalkulasi kuesioner MNA-SF, parameter skor dengan nilai ambang batas 8 sampai 11 merujuk kepada populasi geriatri yang belum jatuh dalam defisiensi parah, namun secara objektif diklasifikasikan 'Beresiko Malnutrisi' dan butuh ditatalaksana prevensi nutrisi.",
     "category": "Geriatri",
     "img": null
   },
@@ -1300,7 +1300,7 @@
       "Konstipasi"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Hormon tiroid merupakan fasilitator kunci regulasi metabolisme di tubuh. Karena laju metabolisme anjlok di segala penjuru jaringan pada penderita hipotiroidisme, fungsi peristaltik motilitas traktus gastrointestinal ikut mengalami paralisis relatif, sehingga menyebabkan kesulitan buang air besar yang parah (konstipasi).",
     "category": "Geriatri",
     "img": null
   },
@@ -1315,7 +1315,7 @@
       "Tacrine"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Berbeda dengan kolinesterase inhibitor (donepezil dkk) yang khusus demensia tahap ringan-menengah, obat Memantine adalah agen antagonis reseptor glutamatergik tipe NMDA yang direkomendasikan dan disetujui FDA untuk mengerem eksitotoksisitas pada manifestasi demensia Alzheimer tingkat sedang ke berat.",
     "category": "Geriatri",
     "img": null
   },
@@ -1330,7 +1330,7 @@
       "MRI T1 FLAIR"
     ],
     "correct": 3,
-    "explanation": "",
+    "explanation": "Fluid-Attenuated Inversion Recovery (FLAIR) di sekuen T2 pada mesin MRI bertugas menghalau bayangan benderang cairan ventrikel (CSF). Hal ini menghasilkan visualisasi di mana penumpukan cairan patologis perivaskular lesi substansia alba kronis (WMH) terlihat berbinar kontras bercahaya.",
     "category": "Geriatri",
     "img": null
   },
@@ -1345,7 +1345,7 @@
       "Collum femoris"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Kombinasi antara deplesi tulang mekanis yang sangat kuat oleh osteoporosis pascamenopause atau senilis di area panggul dan impak gaya kompresi mendadak ketika lansia jatuh ke lantai, sering kali meledakkan struktur leher paha, menjadikan fraktur kolum femoris sebagai endemi cedera jatuh lansia.",
     "category": "Geriatri",
     "img": null
   },
@@ -1360,7 +1360,7 @@
       "Diberikan bersamaan dengan insulin basal dalam satu suntikan"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Tugas utama injeksi insulin bolus/prandial adalah menduplikasi rilis fasa glukosa pasca makan sesegera mungkin. Karena profil waktu aktif insulin reguler konvensional cukup lambat, penderita butuh jeda masuk (30 menit sebelum gigitan pertama). Sedangkan varian rapid-acting diinjeksikan saat hidangan makan disajikan di depan mata.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1375,7 +1375,7 @@
       "Pioglitazone"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Regimen baru antidiabetes kelas Inhibitor sodium-glucose cotransporter-2 (SGLT-2i) membuang molekul gula dari ginjal menuju ke ruang tampung berkemih. Muatan glukosuria masif ini akan menarik molekul air ikut meluncur ke saluran kencing via osmotik diuresis, sehingga keluhan lazimnya berupa poliuria.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1390,7 +1390,7 @@
       "Menghambat PCSK9"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Substansi fibrat mengikat faktor nuklear intraseluler PPAR-alpha yang lantas meroketkan sintesis ekspresi enzim pencerna lemak, yakni Lipoprotein Lipase (LPL). Hal ini melucuti trigliserida dari kendaraan pengangkutnya dengan laju tinggi sehingga efektif mengatasi dislipidemia.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1405,7 +1405,7 @@
       "Inkontinensia campuran"
     ],
     "correct": 0,
-    "explanation": "",
+    "explanation": "Kondisi terpicunya relaksasi sfingter secara tidak sadar akibat peningkatan drastis tekanan fisik di kavum abdomen (seperti jongkok, mengangkat koper, tertawa, atau mengejan hebat tanpa keinginan biologis untuk buang air kecil) mencerminkan presentasi klasik defek anatomi dasar panggul Inkontinensia Stres.",
     "category": "Geriatri",
     "img": null
   },
@@ -1420,7 +1420,7 @@
       "Hipotensi ortostatik, atrial fibrilasi, gagal jantung, dan gagal ginjal"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Kelompok besar penanda kerapuhan fisiologis Geriatric Giants, sering disederhanakan melalui jargon etiologi awalan I, bermanifestasi utama meliputi Immobility (berbaring di kasur terhambat gerak), Instability (fobia/insiden jatuh motorik), Incontinence (kebocoran kandung kemih/usus), Intelektual Impairment (kemunduran memori kognitif), dll.",
     "category": "Geriatri",
     "img": null
   },
@@ -1435,7 +1435,7 @@
       "Provitamin D"
     ],
     "correct": 2,
-    "explanation": "",
+    "explanation": "Substrat baku metabolisme vitamin tak berguna hingga mendapat sentuhan akhir melalui ginjal berupa reaksi hidroksilasi enzimatik, mengubah wujud mentahnya menjelma menjadi format steroid ampuh 1,25-dihidroksikolekalsiferol yang identik dikenal dengan sebutan fungsional Kalsitriol.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1450,7 +1450,7 @@
       "Radiasi"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Jarum suntik merupakan benda padat nan runcing yang dalam analisis identifikasi bahaya kerja (HIRARC) murni merupakan pemicu bahaya fisik tipe mekanis, memfasilitasi jejas abrasi penetratif tembus kulit, yang kelak menjembatani infeksi agen bilogis darah (HIV/HBV).",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1465,7 +1465,7 @@
       "Abdomen"
     ],
     "correct": 4,
-    "explanation": "",
+    "explanation": "Area deposisi cairan insulin subkutan di jaringan lemak abdominal (perut, kecuali zona dua inci sekitar umbilikus secara presisi) merupakan lapangan emas penyerapan karena tidak terpapar kompresi berlebih gerak otot masif layaknya betis atau bahu, meminimalkan fluktuasi asupan insulin yang tak terduga.",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1480,7 +1480,7 @@
       "HbA1c 4–5,6%"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Standar panduan internasional American Diabetes Association menetapkan area ekuivokal antara regulasi sel sehat (di bawah 5.7) dan konfirmasi komplikasi diabetes paripurna (di atas atau ekuivalen 6.5) sebagai prediabetes (5,7–6,4%).",
     "category": "Endokrin-Metabolik",
     "img": null
   },
@@ -1495,7 +1495,7 @@
       "Keduanya memiliki gambaran klinis yang identik"
     ],
     "correct": 1,
-    "explanation": "",
+    "explanation": "Demarkasi garis klinis terpenting ialah observasi sensorium pasien. Delirium menghancurkan integritas kesadaran atensi sehingga penderita tidak koheren dalam hitungan jam-hari, sedangkan pasien depresi bergelut dengan suasana afektif jiwa gelap berkepanjangan tanpa kehilangan kejernihan kontak dengan orientasi realita absolut.",
     "category": "Endokrin-Metabolik",
     "img": null
   },

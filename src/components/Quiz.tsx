@@ -56,14 +56,14 @@ function shuffleArray<T>(arr: T[]): T[] {
 // ── LocalStorage ───────────────────────────────────────────────────────────────
 
 const LS_KEY = 'quiz_mt_progress'
-const LS_VERSION = 3  // bumped because we added participantName + sessionId
+const LS_VERSION = 4  // bumped: answers now stored as id-keyed map, not array
 
 interface SavedBiasaState {
   version: number
   selectedCategory: string
   shuffleOn: boolean
   activeQuestions: Question[]
-  answers: AnswerState[]
+  answerMap: Record<string, AnswerState>  // question.id → jawaban
   participantName: string
   sessionId: string
 }
@@ -114,6 +114,30 @@ function loadOrCreateSessionId(): string {
   }
 }
 
+// Shuffle session ID — di-rotate setiap kali peserta menekan tombol Acak
+// Ini memungkinkan satu device punya lebih dari satu baris di spreadsheet (per sesi acak)
+const LS_SHUFFLE_SESSION_KEY = 'quiz_mt_shuffle_session_id'
+function loadOrCreateShuffleSessionId(): string {
+  try {
+    const existing = localStorage.getItem(LS_SHUFFLE_SESSION_KEY)
+    if (existing) return existing
+    const newId = 'sh_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+    localStorage.setItem(LS_SHUFFLE_SESSION_KEY, newId)
+    return newId
+  } catch {
+    return 'sh_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+  }
+}
+function rotateShuffleSessionId(): string {
+  try {
+    const newId = 'sh_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+    localStorage.setItem(LS_SHUFFLE_SESSION_KEY, newId)
+    return newId
+  } catch {
+    return 'sh_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+  }
+}
+
 // ── Data submission ────────────────────────────────────────────────────────────
 
 interface QuizResult {
@@ -131,15 +155,15 @@ function buildResult(
   participantName: string,
   sessionId: string,
   questions: Question[],
-  answers: AnswerState[],
+  answerMap: Record<string, AnswerState>,
 ): QuizResult {
   const total = questions.length
-  const answered = answers.filter(a => a !== null).length
-  const correct = answers.filter((a, i) => typeof a === 'number' && a === questions[i]?.correct).length
-  const wrong = answers.filter((a, i) => typeof a === 'number' && a !== questions[i]?.correct).length
+  const answered = questions.filter(q => answerMap[q.id] !== null && answerMap[q.id] !== undefined).length
+  const correct = questions.filter(q => typeof answerMap[q.id] === 'number' && answerMap[q.id] === q.correct).length
+  const wrong = questions.filter(q => typeof answerMap[q.id] === 'number' && answerMap[q.id] !== q.correct).length
   const notDone = total - answered
   return {
-    nama: participantName.trim() || 'Anonim Yang Malas Ngasih Nama',
+    nama: participantName.trim() || 'Pemalas',
     sessionId,
     persentaseDikerjakan: total > 0 ? Math.round((answered / total) * 100) : 0,
     jumlahBenar: correct,
@@ -182,10 +206,14 @@ export default function Quiz() {
   const [biasaCategory, setBiasaCategory]         = useState('Semua')
   const [biasaShuffleOn, setBiasaShuffleOn]       = useState(false)
   const [biasaQuestions, setBiasaQuestions]       = useState<Question[]>([])
-  const [biasaAnswers, setBiasaAnswers]           = useState<AnswerState[]>([])
+  // answerMap menyimpan jawaban per question.id — tidak hilang saat filter/shuffle berubah
+  const [answerMap, setAnswerMap]                 = useState<Record<string, AnswerState>>({})
+  // biasaAnswers adalah derived: urutan sesuai biasaQuestions saat ini
+  const biasaAnswers = biasaQuestions.map(q => answerMap[q.id] ?? null)
   const [participantName, setParticipantName]     = useState(() => loadSavedName())
   const [nameConfirmed, setNameConfirmed]         = useState(() => loadSavedName().trim().length > 0)
   const [sessionId, setSessionId]                 = useState(() => loadOrCreateSessionId())
+  const [shuffleSessionId, setShuffleSessionId]   = useState(() => loadOrCreateShuffleSessionId())
 
   // Mode Tentamen state — ephemeral, no storage
   const [tentamenState, setTentamenState]         = useState<AppState>('setup')
@@ -201,6 +229,7 @@ export default function Quiz() {
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
   const [isMuted, setIsMuted] = useState(false)
+  const isMutedRef = useRef(false)
   useEffect(() => {
     audioBenar.current = new Audio('./benar.mp3')
     audioSalah.current = new Audio('./salah.mp3')
@@ -208,8 +237,18 @@ export default function Quiz() {
     audioSalah.current.load()
   }, [])
 
+  function toggleMute() {
+    const next = !isMutedRef.current
+    isMutedRef.current = next
+    setIsMuted(next)
+    if (next) {
+      audioBenar.current?.pause()
+      audioSalah.current?.pause()
+    }
+  }
+
   function playSound(correct: boolean) {
-    if (isMuted) return
+    if (isMutedRef.current) return
     const audio = correct ? audioBenar.current : audioSalah.current
     if (!audio) return
     audio.currentTime = 0
@@ -218,22 +257,26 @@ export default function Quiz() {
 
   // ── Refs for beforeunload beacon ──
   const biasaStateRef = useRef<{
-    questions: Question[]
-    answers: AnswerState[]
+    allQuestions: Question[]       // semua soal (Semua kategori) untuk statistik akurat
+    answerMap: Record<string, AnswerState>
     participantName: string
     sessionId: string
+    shuffleSessionId: string
+    shuffleOn: boolean
     nameConfirmed: boolean
-  }>({ questions: [], answers: [], participantName: '', sessionId, nameConfirmed: false })
+  }>({ allQuestions: [], answerMap: {}, participantName: '', sessionId, shuffleSessionId, shuffleOn: false, nameConfirmed: false })
 
   useEffect(() => {
     biasaStateRef.current = {
-      questions: biasaQuestions,
-      answers: biasaAnswers,
+      allQuestions: questions,
+      answerMap,
       participantName,
       sessionId,
+      shuffleSessionId,
+      shuffleOn: biasaShuffleOn,
       nameConfirmed,
     }
-  }, [biasaQuestions, biasaAnswers, participantName, sessionId, nameConfirmed])
+  }, [questions, answerMap, participantName, sessionId, shuffleSessionId, biasaShuffleOn, nameConfirmed])
 
   const isTentamenRunningRef = useRef(false)
   useEffect(() => {
@@ -246,9 +289,10 @@ export default function Quiz() {
       // Send biasa progress beacon whenever there is at least 1 answered question
       // This fires even if quiz is incomplete — by design.
       const s = biasaStateRef.current
-      const answered = s.answers.filter(a => a !== null).length
-      if (answered > 0 && s.questions.length > 0) {
-        const result = buildResult(s.participantName, s.sessionId, s.questions, s.answers)
+      const answered = Object.values(s.answerMap).filter(a => a !== null && a !== undefined).length
+      if (answered > 0 && s.allQuestions.length > 0) {
+        const effectiveSessionId = s.shuffleOn ? s.shuffleSessionId : s.sessionId
+        const result = buildResult(s.participantName, effectiveSessionId, s.allQuestions, s.answerMap)
         submitResult(result)
         // sessionId TIDAK di-rotate, agar Apps Script bisa update baris yang sama
         // (identifikasi responden via nama + sessionId yang persisten per device)
@@ -278,7 +322,7 @@ export default function Quiz() {
       setBiasaCategory(saved.selectedCategory)
       setBiasaShuffleOn(saved.shuffleOn)
       setBiasaQuestions(saved.activeQuestions)
-      setBiasaAnswers(saved.answers)
+      setAnswerMap(saved.answerMap ?? {})
       // Name comes from persistent LS_NAME_KEY, not session data
       const persistedName = loadSavedName()
       setParticipantName(persistedName)
@@ -304,7 +348,7 @@ export default function Quiz() {
     const qs = shuffle ? shuffleArray(base) : base
     if (!qs.length) return
     setBiasaQuestions(qs)
-    setBiasaAnswers(new Array(qs.length).fill(null))
+    // answerMap TIDAK di-reset di sini — jawaban lama tetap dipertahankan
     setBiasaActive(true)
   }
 
@@ -315,11 +359,11 @@ export default function Quiz() {
       selectedCategory: biasaCategory,
       shuffleOn: biasaShuffleOn,
       activeQuestions: biasaQuestions,
-      answers: biasaAnswers,
+      answerMap,
       participantName,
       sessionId,
     })
-  }, [biasaActive, biasaCategory, biasaShuffleOn, biasaQuestions, biasaAnswers, participantName, sessionId])
+  }, [biasaActive, biasaCategory, biasaShuffleOn, biasaQuestions, answerMap, participantName, sessionId])
 
   // ── Tentamen timer ──
   useEffect(() => {
@@ -358,11 +402,13 @@ export default function Quiz() {
   // ── Mode Biasa handlers ──
   const handleResetBiasa = useCallback(() => {
     clearBiasa()
-    // Hapus nama agar peserta bisa ganti nama, tapi sessionId device tetap sama
     try { localStorage.removeItem(LS_NAME_KEY) } catch { /* noop */ }
-    // sessionId TIDAK di-reset — tetap pakai ID device yang sama
+    // Rotate shuffleSessionId saat reset → Apps Script akan buat baris baru
+    // (bukan update baris lama), sehingga riwayat sesi sebelumnya tetap tersimpan
+    const newShuffleId = rotateShuffleSessionId()
+    setShuffleSessionId(newShuffleId)
     setBiasaQuestions([])
-    setBiasaAnswers([])
+    setAnswerMap({})
     setNameConfirmed(false)
     setParticipantName('')
     setBiasaActive(false)
@@ -373,7 +419,7 @@ export default function Quiz() {
     const qs = buildQuestions(cat, biasaShuffleOn, questions)
     if (!qs.length) return
     setBiasaQuestions(qs)
-    setBiasaAnswers(new Array(qs.length).fill(null))
+    // answerMap TIDAK di-reset — jawaban lama tetap dipertahankan
     clearBiasa()
   }
 
@@ -383,16 +429,17 @@ export default function Quiz() {
     const qs = buildQuestions(biasaCategory, next, questions)
     if (!qs.length) return
     setBiasaQuestions(qs)
-    setBiasaAnswers(new Array(qs.length).fill(null))
+    // answerMap TIDAK di-reset — jawaban lama tetap dipertahankan
     clearBiasa()
   }
 
   const handleAnswerBiasa = useCallback((qIdx: number, optIdx: number) => {
-    setBiasaAnswers(prev => {
-      if (prev[qIdx] !== null) return prev
-      const n = [...prev]; n[qIdx] = optIdx
-      playSound(optIdx === biasaQuestions[qIdx]?.correct)
-      return n
+    const q = biasaQuestions[qIdx]
+    if (!q) return
+    setAnswerMap(prev => {
+      if (prev[q.id] !== null && prev[q.id] !== undefined) return prev
+      playSound(optIdx === q.correct)
+      return { ...prev, [q.id]: optIdx }
     })
   }, [biasaQuestions])
 
@@ -518,7 +565,7 @@ export default function Quiz() {
                 </div>
               )}
               <button
-                onClick={() => setIsMuted(m => !m)}
+                onClick={toggleMute}
                 title={isMuted ? 'Nyalakan suara' : 'Matikan suara'}
                 style={{
                   background: 'none',

@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef, type CSSProperties } from 're
 import {
   CheckCircle, XCircle, BookOpen, Trophy,
   Filter, Shuffle, RotateCcw, ChevronRight, ImageIcon,
-  Play, Zap, Timer, AlertCircle, Clock,
+  Play, Zap, Timer, AlertCircle, Clock, User,
 } from 'lucide-react'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
@@ -27,6 +27,9 @@ type QuestionPhase = 'answering' | 'answered_manual' | 'answered_timeout'
 const LETTERS = ['A', 'B', 'C', 'D', 'E']
 const EXAM_TIMER = 30
 
+// Ganti dengan URL Apps Script Anda setelah deploy
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxt--uuSe95QpdjmQgLaNBytT9MX9cq4QoFp0gEu0zCQisfGqLPOqJONRN6ckNZMIzn/exec'
+
 const CATEGORY_COLORS: Record<string, string> = {
   'Endokrin-Metabolik':                       'bg-blue-500/20 text-blue-300 border-blue-500/30',
   'Gizi & Nutrisi':                           'bg-green-500/20 text-green-300 border-green-500/30',
@@ -50,10 +53,10 @@ function shuffleArray<T>(arr: T[]): T[] {
   return a
 }
 
-// ── LocalStorage (Mode Biasa — persists across refresh & tab close) ────────────
+// ── LocalStorage ───────────────────────────────────────────────────────────────
 
 const LS_KEY = 'quiz_mt_progress'
-const LS_VERSION = 2
+const LS_VERSION = 3  // bumped because we added participantName + sessionId
 
 interface SavedBiasaState {
   version: number
@@ -61,6 +64,8 @@ interface SavedBiasaState {
   shuffleOn: boolean
   activeQuestions: Question[]
   answers: AnswerState[]
+  participantName: string
+  sessionId: string
 }
 
 function loadBiasa(): SavedBiasaState | null {
@@ -78,11 +83,71 @@ function loadBiasa(): SavedBiasaState | null {
 function saveBiasa(state: Omit<SavedBiasaState, 'version'>) {
   try {
     localStorage.setItem(LS_KEY, JSON.stringify({ version: LS_VERSION, ...state }))
-  } catch { /* quota exceeded — silently ignore */ }
+  } catch { /* quota exceeded */ }
 }
 
 function clearBiasa() {
   try { localStorage.removeItem(LS_KEY) } catch { /* noop */ }
+}
+
+// ── Session ID helper ──────────────────────────────────────────────────────────
+
+function generateSessionId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+}
+
+// ── Data submission ────────────────────────────────────────────────────────────
+
+interface QuizResult {
+  nama: string
+  sessionId: string
+  persentaseDikerjakan: number
+  jumlahBenar: number
+  jumlahSalah: number
+  persentaseTidakDikerjakan: number
+  totalSoal: number
+  timestamp: string
+}
+
+function buildResult(
+  participantName: string,
+  sessionId: string,
+  questions: Question[],
+  answers: AnswerState[],
+): QuizResult {
+  const total = questions.length
+  const answered = answers.filter(a => a !== null).length
+  const correct = answers.filter((a, i) => typeof a === 'number' && a === questions[i]?.correct).length
+  const wrong = answers.filter((a, i) => typeof a === 'number' && a !== questions[i]?.correct).length
+  const notDone = total - answered
+  return {
+    nama: participantName.trim() || 'Anonim Yang Malas Ngasih Nama',
+    sessionId,
+    persentaseDikerjakan: total > 0 ? Math.round((answered / total) * 100) : 0,
+    jumlahBenar: correct,
+    jumlahSalah: wrong,
+    persentaseTidakDikerjakan: total > 0 ? Math.round((notDone / total) * 100) : 0,
+    totalSoal: total,
+    timestamp: new Date().toISOString(),
+  }
+}
+
+function submitResult(result: QuizResult) {
+  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes('GANTI_DENGAN')) return
+  try {
+    const body = JSON.stringify(result)
+    if (navigator.sendBeacon) {
+      const blob = new Blob([body], { type: 'application/json' })
+      navigator.sendBeacon(APPS_SCRIPT_URL, blob)
+    } else {
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        body,
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+      }).catch(() => {})
+    }
+  } catch { /* silently ignore */ }
 }
 
 // ── Root Component ─────────────────────────────────────────────────────────────
@@ -91,12 +156,15 @@ export default function Quiz() {
   const [questions, setQuestions] = useState<Question[]>([])
   const [quizMode, setQuizMode]   = useState<QuizMode>('biasa')
 
-  // Mode Biasa state — loaded from localStorage on mount
-  const [biasaActive, setBiasaActive]             = useState(false) // true = running biasa
+  // Mode Biasa state
+  const [biasaActive, setBiasaActive]             = useState(false)
   const [biasaCategory, setBiasaCategory]         = useState('Semua')
   const [biasaShuffleOn, setBiasaShuffleOn]       = useState(false)
   const [biasaQuestions, setBiasaQuestions]       = useState<Question[]>([])
   const [biasaAnswers, setBiasaAnswers]           = useState<AnswerState[]>([])
+  const [participantName, setParticipantName]     = useState('')
+  const [nameConfirmed, setNameConfirmed]         = useState(false)
+  const [sessionId, setSessionId]                 = useState(() => generateSessionId())
 
   // Mode Tentamen state — ephemeral, no storage
   const [tentamenState, setTentamenState]         = useState<AppState>('setup')
@@ -108,14 +176,10 @@ export default function Quiz() {
   const [timeLeft, setTimeLeft]                   = useState(EXAM_TIMER)
   const [qPhase, setQPhase]                       = useState<QuestionPhase>('answering')
 
-  // ── Audio refs (preloaded so browser allows instant play on click) ──
+  // ── Audio ──
   const audioBenar = useRef<HTMLAudioElement | null>(null)
   const audioSalah = useRef<HTMLAudioElement | null>(null)
   const [isMuted, setIsMuted] = useState(false)
-  // Ref selalu sinkron dengan isMuted — dibaca oleh playSound
-  // agar tidak terjadi stale closure di dalam useCallback maupun setState.
-  const isMutedRef = useRef(false)
-  useEffect(() => { isMutedRef.current = isMuted }, [isMuted])
   useEffect(() => {
     audioBenar.current = new Audio('./benar.mp3')
     audioSalah.current = new Audio('./salah.mp3')
@@ -123,30 +187,59 @@ export default function Quiz() {
     audioSalah.current.load()
   }, [])
 
-  const playSound = useCallback((correct: boolean) => {
-    if (isMutedRef.current) return
+  function playSound(correct: boolean) {
+    if (isMuted) return
     const audio = correct ? audioBenar.current : audioSalah.current
     if (!audio) return
     audio.currentTime = 0
-    audio.play().catch(() => { /* blocked by browser policy */ })
-  }, [])
+    audio.play().catch(() => {})
+  }
 
-  // Ref for beforeunload
+  // ── Refs for beforeunload beacon ──
+  const biasaStateRef = useRef<{
+    questions: Question[]
+    answers: AnswerState[]
+    participantName: string
+    sessionId: string
+    nameConfirmed: boolean
+  }>({ questions: [], answers: [], participantName: '', sessionId, nameConfirmed: false })
+
+  useEffect(() => {
+    biasaStateRef.current = {
+      questions: biasaQuestions,
+      answers: biasaAnswers,
+      participantName,
+      sessionId,
+      nameConfirmed,
+    }
+  }, [biasaQuestions, biasaAnswers, participantName, sessionId, nameConfirmed])
+
   const isTentamenRunningRef = useRef(false)
   useEffect(() => {
     isTentamenRunningRef.current = quizMode === 'tentamen' && tentamenState === 'running'
   }, [quizMode, tentamenState])
 
-  // ── beforeunload warning only when tentamen is active ──
+  // ── beforeunload: beacon biasa progress + tentamen warning ──
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (!isTentamenRunningRef.current) return
-      e.preventDefault()
-      e.returnValue = ''
+      // Send biasa progress beacon when mode is biasa and quiz started
+      if (quizMode === 'biasa') {
+        const s = biasaStateRef.current
+        const answered = s.answers.filter(a => a !== null).length
+        if (s.nameConfirmed && answered > 0 && s.questions.length > 0) {
+          const result = buildResult(s.participantName, s.sessionId, s.questions, s.answers)
+          submitResult(result)
+        }
+      }
+      // Warn tentamen
+      if (isTentamenRunningRef.current) {
+        e.preventDefault()
+        e.returnValue = ''
+      }
     }
     window.addEventListener('beforeunload', handleBeforeUnload)
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
-  }, [])
+  }, [quizMode])
 
   // ── Load questions ──
   useEffect(() => {
@@ -155,7 +248,7 @@ export default function Quiz() {
       .then((data: Question[]) => setQuestions(data))
   }, [])
 
-  // ── Restore biasa progress from localStorage once questions are loaded ──
+  // ── Restore biasa from localStorage ──
   useEffect(() => {
     if (questions.length === 0) return
     const saved = loadBiasa()
@@ -164,15 +257,15 @@ export default function Quiz() {
       setBiasaShuffleOn(saved.shuffleOn)
       setBiasaQuestions(saved.activeQuestions)
       setBiasaAnswers(saved.answers)
+      setParticipantName(saved.participantName ?? '')
+      setNameConfirmed(true)
+      setSessionId(saved.sessionId ?? generateSessionId())
       setBiasaActive(true)
-    } else {
-      // Auto-start biasa mode with default settings
-      autoStartBiasa(questions, 'Semua', false)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questions])
 
-  function autoStartBiasa(allQs: Question[], cat: string, shuffle: boolean) {
+  function startBiasa(allQs: Question[], cat: string, shuffle: boolean) {
     const base = cat === 'Semua' ? allQs : allQs.filter(q => q.category === cat)
     const qs = shuffle ? shuffleArray(base) : base
     if (!qs.length) return
@@ -181,7 +274,7 @@ export default function Quiz() {
     setBiasaActive(true)
   }
 
-  // ── Persist biasa state to localStorage whenever it changes ──
+  // ── Persist biasa to localStorage ──
   useEffect(() => {
     if (!biasaActive || biasaQuestions.length === 0) return
     saveBiasa({
@@ -189,10 +282,12 @@ export default function Quiz() {
       shuffleOn: biasaShuffleOn,
       activeQuestions: biasaQuestions,
       answers: biasaAnswers,
+      participantName,
+      sessionId,
     })
-  }, [biasaActive, biasaCategory, biasaShuffleOn, biasaQuestions, biasaAnswers])
+  }, [biasaActive, biasaCategory, biasaShuffleOn, biasaQuestions, biasaAnswers, participantName, sessionId])
 
-  // ── Tentamen: timer countdown ──
+  // ── Tentamen timer ──
   useEffect(() => {
     if (quizMode !== 'tentamen' || tentamenState !== 'running' || qPhase !== 'answering') return
     if (timeLeft === 0) {
@@ -204,7 +299,6 @@ export default function Quiz() {
     return () => clearTimeout(t)
   }, [quizMode, tentamenState, qPhase, timeLeft, currentIdx])
 
-  // ── Tentamen: auto-advance on timeout ──
   useEffect(() => {
     if (quizMode !== 'tentamen' || tentamenState !== 'running' || qPhase !== 'answered_timeout') return
     const t = setTimeout(() => {
@@ -230,11 +324,15 @@ export default function Quiz() {
   // ── Mode Biasa handlers ──
   const handleResetBiasa = useCallback(() => {
     clearBiasa()
+    const newSessionId = generateSessionId()
+    setSessionId(newSessionId)
     const qs = buildQuestions(biasaCategory, biasaShuffleOn, questions)
     if (!qs.length) return
     setBiasaQuestions(qs)
     setBiasaAnswers(new Array(qs.length).fill(null))
-    setBiasaActive(true)
+    setNameConfirmed(false)
+    setParticipantName('')
+    setBiasaActive(false)
   }, [biasaCategory, biasaShuffleOn, buildQuestions, questions])
 
   const handleBiasaFilterChange = (cat: string) => {
@@ -264,6 +362,15 @@ export default function Quiz() {
       return n
     })
   }, [biasaQuestions])
+
+  // Called when name form is submitted
+  const handleNameSubmit = useCallback((name: string) => {
+    setParticipantName(name)
+    setNameConfirmed(true)
+    const newSessionId = generateSessionId()
+    setSessionId(newSessionId)
+    startBiasa(questions, biasaCategory, biasaShuffleOn)
+  }, [questions, biasaCategory, biasaShuffleOn])
 
   // ── Mode Tentamen handlers ──
   const handleStartTentamen = useCallback(() => {
@@ -307,19 +414,20 @@ export default function Quiz() {
   const handleModeChange = (mode: QuizMode) => {
     if (mode === quizMode) return
     setQuizMode(mode)
-    // Entering tentamen always starts from setup
     if (mode === 'tentamen') {
       setTentamenState('setup')
       setTentamenQuestions([])
       setTentamenAnswers([])
     }
-    // Leaving tentamen back to biasa — biasa state is untouched (persisted in localStorage)
   }
 
   // ── Computed for display ──
   const biasaAnsweredCount = biasaAnswers.filter(a => a !== null).length
   const biasaCorrectCount  = biasaAnswers.filter((a, i) => typeof a === 'number' && a === biasaQuestions[i]?.correct).length
   const tentamenQCount     = buildQuestions(tentamenCategory, false, questions).length
+
+  // Show name form if biasa mode, questions loaded, and name not yet confirmed
+  const showNameForm = quizMode === 'biasa' && questions.length > 0 && !nameConfirmed && !biasaActive
 
   return (
     <div style={{ backgroundColor: '#0d1117', minHeight: '100vh' }}>
@@ -421,8 +529,8 @@ export default function Quiz() {
               </button>
             ))}
 
-            {/* Reset button — only in biasa mode */}
-            {quizMode === 'biasa' && biasaActive && (
+            {/* Reset biasa */}
+            {quizMode === 'biasa' && (biasaActive || nameConfirmed) && (
               <button
                 onClick={handleResetBiasa}
                 style={{
@@ -453,7 +561,7 @@ export default function Quiz() {
               </button>
             )}
 
-            {/* Reset button — tentamen when running or finished */}
+            {/* Reset tentamen */}
             {quizMode === 'tentamen' && tentamenState !== 'setup' && (
               <button
                 onClick={handleResetTentamen}
@@ -488,76 +596,86 @@ export default function Quiz() {
         </div>
       </div>
 
-      {/* ═══ Filter bar (scrolls away) ═══ */}
-      <div style={{ borderBottom: '1px solid #21262d', backgroundColor: '#0a0e14', padding: '10px 0' }}>
-        <div className="max-w-3xl mx-auto px-4">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-            <span style={{
-              display: 'flex', alignItems: 'center', gap: '3px',
-              fontSize: '0.68rem', color: '#484f58', flexShrink: 0,
-            }}>
-              <Filter style={{ width: '11px', height: '11px' }} /> Topik:
-            </span>
+      {/* ═══ Filter bar — hidden during name form ═══ */}
+      {!showNameForm && (
+        <div style={{ borderBottom: '1px solid #21262d', backgroundColor: '#0a0e14', padding: '10px 0' }}>
+          <div className="max-w-3xl mx-auto px-4">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+              <span style={{
+                display: 'flex', alignItems: 'center', gap: '3px',
+                fontSize: '0.68rem', color: '#484f58', flexShrink: 0,
+              }}>
+                <Filter style={{ width: '11px', height: '11px' }} /> Topik:
+              </span>
 
-            {categories.map(cat => {
-              const activeCat = quizMode === 'biasa' ? biasaCategory : tentamenCategory
-              const active = activeCat === cat
-              const label  = cat === 'Semua' ? 'Semua' : cat.replace(' (Bergambar)', ' ⬜').replace('Demografi & Epidemiologi', 'Demografi')
-              return (
-                <button
-                  key={cat}
-                  onClick={() => {
-                    if (quizMode === 'biasa') handleBiasaFilterChange(cat)
-                    else setTentamenCategory(cat)
-                  }}
-                  style={{
-                    padding: '3px 10px',
-                    borderRadius: '999px',
-                    fontSize: '0.68rem',
-                    fontWeight: active ? 700 : 500,
-                    cursor: 'pointer',
-                    transition: 'all 0.15s',
-                    lineHeight: 1.5,
-                    ...(active
-                      ? { backgroundColor: '#e8a838', color: '#0d1117', border: 'none' }
-                      : { backgroundColor: 'transparent', color: '#8b949e', border: '1px solid rgba(255,255,255,0.1)' }),
-                  }}
-                >
-                  {label}
-                </button>
-              )
-            })}
+              {categories.map(cat => {
+                const activeCat = quizMode === 'biasa' ? biasaCategory : tentamenCategory
+                const active = activeCat === cat
+                const label  = cat === 'Semua' ? 'Semua' : cat.replace(' (Bergambar)', ' ⬜').replace('Demografi & Epidemiologi', 'Demografi')
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => {
+                      if (quizMode === 'biasa') handleBiasaFilterChange(cat)
+                      else setTentamenCategory(cat)
+                    }}
+                    style={{
+                      padding: '3px 10px',
+                      borderRadius: '999px',
+                      fontSize: '0.68rem',
+                      fontWeight: active ? 700 : 500,
+                      cursor: 'pointer',
+                      transition: 'all 0.15s',
+                      lineHeight: 1.5,
+                      ...(active
+                        ? { backgroundColor: '#e8a838', color: '#0d1117', border: 'none' }
+                        : { backgroundColor: 'transparent', color: '#8b949e', border: '1px solid rgba(255,255,255,0.1)' }),
+                    }}
+                  >
+                    {label}
+                  </button>
+                )
+              })}
 
-            <button
-              onClick={() => {
-                if (quizMode === 'biasa') handleBiasaShuffleToggle()
-                else setTentamenShuffleOn(p => !p)
-              }}
-              style={{
-                marginLeft: 'auto',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-                padding: '3px 10px',
-                borderRadius: '999px',
-                fontSize: '0.68rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.15s',
-                ...((quizMode === 'biasa' ? biasaShuffleOn : tentamenShuffleOn)
-                  ? { backgroundColor: '#e8a838', color: '#0d1117', border: 'none' }
-                  : { backgroundColor: 'transparent', color: '#8b949e', border: '1px solid rgba(255,255,255,0.1)' }),
-              }}
-            >
-              <Shuffle style={{ width: '11px', height: '11px' }} />
-              Acak {(quizMode === 'biasa' ? biasaShuffleOn : tentamenShuffleOn) ? 'ON' : 'OFF'}
-            </button>
+              <button
+                onClick={() => {
+                  if (quizMode === 'biasa') handleBiasaShuffleToggle()
+                  else setTentamenShuffleOn(p => !p)
+                }}
+                style={{
+                  marginLeft: 'auto',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '3px 10px',
+                  borderRadius: '999px',
+                  fontSize: '0.68rem',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.15s',
+                  ...((quizMode === 'biasa' ? biasaShuffleOn : tentamenShuffleOn)
+                    ? { backgroundColor: '#e8a838', color: '#0d1117', border: 'none' }
+                    : { backgroundColor: 'transparent', color: '#8b949e', border: '1px solid rgba(255,255,255,0.1)' }),
+                }}
+              >
+                <Shuffle style={{ width: '11px', height: '11px' }} />
+                Acak {(quizMode === 'biasa' ? biasaShuffleOn : tentamenShuffleOn) ? 'ON' : 'OFF'}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ═══ Main content ═══ */}
       <main className="max-w-3xl mx-auto px-4 py-6">
+
+        {/* ── Name form (biasa, before start) ── */}
+        {showNameForm && (
+          <NameForm
+            onSubmit={handleNameSubmit}
+            questionCount={buildQuestions(biasaCategory, biasaShuffleOn, questions).length}
+          />
+        )}
 
         {/* ── Mode Biasa ── */}
         {quizMode === 'biasa' && biasaActive && (
@@ -565,9 +683,11 @@ export default function Quiz() {
             questions={biasaQuestions}
             answers={biasaAnswers}
             onAnswer={handleAnswerBiasa}
+            participantName={participantName}
           />
         )}
-        {quizMode === 'biasa' && !biasaActive && (
+
+        {quizMode === 'biasa' && !biasaActive && !showNameForm && (
           <div style={{ color: '#6e7681', textAlign: 'center', marginTop: '60px', fontSize: '0.88rem' }}>
             Memuat soal…
           </div>
@@ -603,6 +723,110 @@ export default function Quiz() {
   )
 }
 
+// ── NameForm ───────────────────────────────────────────────────────────────────
+
+function NameForm({ onSubmit, questionCount }: {
+  onSubmit: (name: string) => void
+  questionCount: number
+}) {
+  const [name, setName] = useState('')
+
+  const handleStart = () => {
+    onSubmit(name)
+  }
+
+  return (
+    <div className="quiz-fade-in">
+      <div style={{
+        backgroundColor: '#161b22',
+        border: '1px solid #30363d',
+        borderRadius: '16px',
+        padding: '28px 24px',
+        marginBottom: '16px',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '24px' }}>
+          <div style={{
+            backgroundColor: '#e8a83818',
+            border: '1px solid #e8a83835',
+            borderRadius: '10px',
+            padding: '10px',
+            flexShrink: 0,
+          }}>
+            <User style={{ width: '22px', height: '22px', color: '#e8a838' }} />
+          </div>
+          <div>
+            <h2 style={{ color: '#f0f6fc', fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>
+              Selamat Datang!
+            </h2>
+            <p style={{ color: '#8b949e', fontSize: '0.8rem', marginTop: '4px' }}>
+              Siapkan dirimu — ada <span style={{ color: '#e8a838', fontWeight: 700 }}>{questionCount}</span> soal menunggumu
+            </p>
+          </div>
+        </div>
+
+        {/* Name input */}
+        <div style={{ marginBottom: '20px' }}>
+          <label style={{ display: 'block', color: '#8b949e', fontSize: '0.78rem', marginBottom: '8px', fontWeight: 600 }}>
+            Nama kamu (opsional)
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') handleStart() }}
+            placeholder="Tulis namamu di sini…"
+            maxLength={60}
+            autoFocus
+            style={{
+              width: '100%',
+              backgroundColor: '#0d1117',
+              border: '1px solid #30363d',
+              borderRadius: '10px',
+              padding: '12px 14px',
+              color: '#f0f6fc',
+              fontSize: '0.9rem',
+              outline: 'none',
+              boxSizing: 'border-box',
+              transition: 'border-color 0.15s',
+            }}
+            onFocus={e => { (e.currentTarget as HTMLInputElement).style.borderColor = '#e8a838' }}
+            onBlur={e => { (e.currentTarget as HTMLInputElement).style.borderColor = '#30363d' }}
+          />
+          <p style={{ color: '#484f58', fontSize: '0.68rem', marginTop: '6px' }}>
+            Jika kosong, kamu akan tercatat sebagai <em style={{ color: '#6e7681' }}>Anonim Yang Malas Ngasih Nama</em>
+          </p>
+        </div>
+
+        {/* Start button */}
+        <button
+          onClick={handleStart}
+          style={{
+            width: '100%',
+            padding: '14px',
+            backgroundColor: '#e8a838',
+            color: '#0d1117',
+            fontWeight: 700,
+            fontSize: '1rem',
+            borderRadius: '12px',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            transition: 'opacity 0.15s',
+          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
+          onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
+        >
+          <Play style={{ width: '18px', height: '18px' }} />
+          Mulai Latihan
+        </button>
+      </div>
+    </div>
+  )
+}
+
 // ── SetupCard (Tentamen only) ──────────────────────────────────────────────────
 
 function SetupCard({ questionCount, onStart }: {
@@ -613,7 +837,6 @@ function SetupCard({ questionCount, onStart }: {
 
   return (
     <div className="quiz-fade-in">
-      {/* Mode info card */}
       <div style={{ backgroundColor: '#161b22', border: '1px solid #30363d', borderRadius: '16px', padding: '24px', marginBottom: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '20px' }}>
           <div style={{
@@ -650,7 +873,6 @@ function SetupCard({ questionCount, onStart }: {
         </ul>
       </div>
 
-      {/* Stats row */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '20px' }}>
         {[
           { value: questionCount.toString(), label: 'Soal' },
@@ -670,7 +892,6 @@ function SetupCard({ questionCount, onStart }: {
         ))}
       </div>
 
-      {/* Start button */}
       <button
         onClick={onStart}
         disabled={questionCount === 0}
@@ -705,18 +926,39 @@ function SetupCard({ questionCount, onStart }: {
 
 // ── BiasaMode ──────────────────────────────────────────────────────────────────
 
-function BiasaMode({ questions, answers, onAnswer }: {
+function BiasaMode({ questions, answers, onAnswer, participantName }: {
   questions: Question[]
   answers: AnswerState[]
   onAnswer: (qIdx: number, optIdx: number) => void
+  participantName: string
 }) {
   const answeredCount = answers.filter(a => a !== null).length
   const correctCount  = answers.filter((a, i) => typeof a === 'number' && a === questions[i]?.correct).length
   const allDone       = answeredCount === questions.length && questions.length > 0
   const pct           = questions.length > 0 ? Math.round((answeredCount / questions.length) * 100) : 0
+  const displayName   = participantName.trim() || null
 
   return (
     <div>
+      {/* Name badge */}
+      {displayName && (
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '6px',
+          backgroundColor: '#e8a83812',
+          border: '1px solid #e8a83830',
+          borderRadius: '999px',
+          padding: '4px 12px',
+          marginBottom: '14px',
+          fontSize: '0.75rem',
+          color: '#e8a838',
+        }}>
+          <User style={{ width: '12px', height: '12px' }} />
+          {displayName}
+        </div>
+      )}
+
       {/* Tracker bar */}
       <div style={{
         backgroundColor: '#161b22',
@@ -725,7 +967,7 @@ function BiasaMode({ questions, answers, onAnswer }: {
         padding: '12px 16px',
         marginBottom: '16px',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justify-content: 'space-between', marginBottom: '8px' }}>
           <span style={{ fontSize: '0.82rem', color: '#8b949e' }}>
             Sudah dijawab:{' '}
             <span style={{ color: '#e8a838', fontFamily: '"JetBrains Mono", monospace', fontWeight: 700 }}>{answeredCount}</span>
@@ -745,7 +987,6 @@ function BiasaMode({ questions, answers, onAnswer }: {
             </span>
           </div>
         </div>
-        {/* Progress bar */}
         <div style={{ backgroundColor: '#21262d', borderRadius: '999px', height: '5px', overflow: 'hidden' }}>
           <div style={{
             height: '100%',
@@ -820,14 +1061,12 @@ function TentamenMode({ question, questionNum, total, timeLeft, phase, answer, o
 
   return (
     <div className="quiz-fade-in">
-      {/* Progress dots + soal X/Y */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
         <span style={{ fontSize: '0.78rem', color: '#8b949e' }}>
           Soal{' '}
           <span style={{ fontFamily: '"JetBrains Mono", monospace', color: '#e8a838', fontWeight: 700 }}>{questionNum}</span>
           {' '}dari {total}
         </span>
-        {/* Mini dot progress */}
         <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
           {Array.from({ length: Math.min(total, 15) }, (_, i) => {
             const done    = i < questionNum - 1
@@ -848,7 +1087,6 @@ function TentamenMode({ question, questionNum, total, timeLeft, phase, answer, o
         </div>
       </div>
 
-      {/* Timer card */}
       <div style={{
         backgroundColor: '#161b22',
         border: `1px solid ${isUrgent ? '#ef444440' : '#30363d'}`,
@@ -879,7 +1117,6 @@ function TentamenMode({ question, questionNum, total, timeLeft, phase, answer, o
           </span>
         </div>
 
-        {/* Timer bar */}
         <div style={{ backgroundColor: '#21262d', borderRadius: '999px', height: '6px', overflow: 'hidden' }}>
           <div style={{
             height: '100%',
@@ -891,7 +1128,6 @@ function TentamenMode({ question, questionNum, total, timeLeft, phase, answer, o
         </div>
       </div>
 
-      {/* Question card */}
       <QuestionCard
         q={question}
         qNum={questionNum}
@@ -899,7 +1135,6 @@ function TentamenMode({ question, questionNum, total, timeLeft, phase, answer, o
         onAnswer={isAnswering ? onAnswer : () => {}}
       />
 
-      {/* Timeout notice */}
       {isTimeout && (
         <div style={{
           backgroundColor: '#ef444418',
@@ -918,7 +1153,6 @@ function TentamenMode({ question, questionNum, total, timeLeft, phase, answer, o
         </div>
       )}
 
-      {/* Next button (manual only) */}
       {isManual && (
         <div className="explanation-slide" style={{ marginTop: '14px' }}>
           <button
@@ -972,7 +1206,6 @@ function TentamenResults({ questions, answers, onRestart }: {
 
   return (
     <div className="quiz-fade-in">
-      {/* Score hero */}
       <div style={{
         backgroundColor: '#161b22',
         border: '1px solid #30363d',
@@ -997,11 +1230,10 @@ function TentamenResults({ questions, answers, onRestart }: {
         </div>
       </div>
 
-      {/* Stats grid */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '14px' }}>
         {[
-          { value: correct, label: 'Benar',      bg: '#16a34a20', border: '#16a34a40', color: '#4ade80' },
-          { value: wrong,   label: 'Salah',       bg: '#ef444420', border: '#ef444440', color: '#f87171' },
+          { value: correct, label: 'Benar',     bg: '#16a34a20', border: '#16a34a40', color: '#4ade80' },
+          { value: wrong,   label: 'Salah',     bg: '#ef444420', border: '#ef444440', color: '#f87171' },
           { value: skipped, label: 'Terlewati',   bg: '#94a3b818', border: '#94a3b835', color: '#94a3b8' },
         ].map(({ value, label, bg, border, color }) => (
           <div key={label} style={{
@@ -1017,7 +1249,6 @@ function TentamenResults({ questions, answers, onRestart }: {
         ))}
       </div>
 
-      {/* Breakdown bar */}
       <div style={{
         backgroundColor: '#161b22',
         border: '1px solid #30363d',
@@ -1044,7 +1275,6 @@ function TentamenResults({ questions, answers, onRestart }: {
         </div>
       </div>
 
-      {/* Restart */}
       <button
         onClick={onRestart}
         style={{
@@ -1118,7 +1348,6 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
       borderRadius: '16px',
       padding: '20px',
     }}>
-      {/* Category + image badge */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
         <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${catColor}`}>
           {q.category}
@@ -1130,7 +1359,6 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
         )}
       </div>
 
-      {/* Question text */}
       <p style={{ color: '#f0f6fc', fontSize: '0.88rem', lineHeight: 1.65, marginBottom: '16px' }}>
         <span style={{ fontFamily: '"JetBrains Mono", monospace', color: '#e8a838', fontWeight: 700, marginRight: '6px' }}>
           {qNum}.
@@ -1138,7 +1366,6 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
         {q.question}
       </p>
 
-      {/* Image */}
       {q.img && (
         <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid #30363d', marginBottom: '14px' }}>
           <img
@@ -1149,7 +1376,6 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
         </div>
       )}
 
-      {/* Options */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {q.options.map((opt, idx) => (
           <button
@@ -1196,7 +1422,6 @@ function QuestionCard({ q, qNum, answer, onAnswer }: {
         ))}
       </div>
 
-      {/* Explanation */}
       {isAnswered && (
         <div
           style={{

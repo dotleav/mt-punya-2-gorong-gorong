@@ -967,7 +967,7 @@ function BiasaMode({ questions, answers, onAnswer, participantName }: {
         padding: '12px 16px',
         marginBottom: '16px',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', justify-content: 'space-between', marginBottom: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
           <span style={{ fontSize: '0.82rem', color: '#8b949e' }}>
             Sudah dijawab:{' '}
             <span style={{ color: '#e8a838', fontFamily: '"JetBrains Mono", monospace', fontWeight: 700 }}>{answeredCount}</span>

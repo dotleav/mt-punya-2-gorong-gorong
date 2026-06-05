@@ -99,10 +99,19 @@ function saveName(name: string) {
   try { localStorage.setItem(LS_NAME_KEY, name) } catch { /* noop */ }
 }
 
-// ── Session ID helper ──────────────────────────────────────────────────────────
-
-function generateSessionId(): string {
-  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+// Session ID — persisten per device, tidak pernah berubah
+// Ini jadi identifier unik per device untuk deduplication di spreadsheet
+const LS_SESSION_KEY = 'quiz_mt_session_id'
+function loadOrCreateSessionId(): string {
+  try {
+    const existing = localStorage.getItem(LS_SESSION_KEY)
+    if (existing) return existing
+    const newId = Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+    localStorage.setItem(LS_SESSION_KEY, newId)
+    return newId
+  } catch {
+    return Date.now().toString(36) + Math.random().toString(36).slice(2, 7)
+  }
 }
 
 // ── Data submission ────────────────────────────────────────────────────────────
@@ -145,14 +154,17 @@ function submitResult(result: QuizResult) {
   if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes('GANTI_DENGAN')) return
   try {
     const body = JSON.stringify(result)
+    // Harus text/plain agar sendBeacon tidak trigger CORS preflight
+    // Google Apps Script tetap bisa baca JSON dari e.postData.contents
     if (navigator.sendBeacon) {
-      const blob = new Blob([body], { type: 'application/json' })
+      const blob = new Blob([body], { type: 'text/plain' })
       navigator.sendBeacon(APPS_SCRIPT_URL, blob)
     } else {
       fetch(APPS_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors',
         body,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         keepalive: true,
       }).catch(() => {})
     }
@@ -173,7 +185,7 @@ export default function Quiz() {
   const [biasaAnswers, setBiasaAnswers]           = useState<AnswerState[]>([])
   const [participantName, setParticipantName]     = useState(() => loadSavedName())
   const [nameConfirmed, setNameConfirmed]         = useState(() => loadSavedName().trim().length > 0)
-  const [sessionId, setSessionId]                 = useState(() => generateSessionId())
+  const [sessionId, setSessionId]                 = useState(() => loadOrCreateSessionId())
 
   // Mode Tentamen state — ephemeral, no storage
   const [tentamenState, setTentamenState]         = useState<AppState>('setup')
@@ -238,13 +250,8 @@ export default function Quiz() {
       if (answered > 0 && s.questions.length > 0) {
         const result = buildResult(s.participantName, s.sessionId, s.questions, s.answers)
         submitResult(result)
-        // Rotate sessionId in localStorage so next open is a fresh session ID
-        // but answers + name are still preserved in LS_KEY
-        const saved = loadBiasa()
-        if (saved) {
-          const nextId = generateSessionId()
-          saveBiasa({ ...saved, sessionId: nextId })
-        }
+        // sessionId TIDAK di-rotate, agar Apps Script bisa update baris yang sama
+        // (identifikasi responden via nama + sessionId yang persisten per device)
       }
       // Warn tentamen
       if (isTentamenRunningRef.current) {
@@ -276,8 +283,8 @@ export default function Quiz() {
       const persistedName = loadSavedName()
       setParticipantName(persistedName)
       setNameConfirmed(true)
-      // sessionId was already rotated in beforeunload, use the new one
-      setSessionId(saved.sessionId ?? generateSessionId())
+      // sessionId persisten per device, ambil dari LS_SESSION_KEY
+      setSessionId(loadOrCreateSessionId())
       setBiasaActive(true)
     } else {
       // No saved session — if we have a saved name, skip name form and start fresh
@@ -285,8 +292,7 @@ export default function Quiz() {
       if (persistedName.trim()) {
         setParticipantName(persistedName)
         setNameConfirmed(true)
-        const newSessionId = generateSessionId()
-        setSessionId(newSessionId)
+        // sessionId sudah di-init dari loadOrCreateSessionId() di useState, tidak perlu set ulang
         startBiasa(questions, biasaCategory, biasaShuffleOn)
       }
     }
@@ -352,10 +358,9 @@ export default function Quiz() {
   // ── Mode Biasa handlers ──
   const handleResetBiasa = useCallback(() => {
     clearBiasa()
-    // Also clear persisted name so they enter name again on next start
+    // Hapus nama agar peserta bisa ganti nama, tapi sessionId device tetap sama
     try { localStorage.removeItem(LS_NAME_KEY) } catch { /* noop */ }
-    const newSessionId = generateSessionId()
-    setSessionId(newSessionId)
+    // sessionId TIDAK di-reset — tetap pakai ID device yang sama
     setBiasaQuestions([])
     setBiasaAnswers([])
     setNameConfirmed(false)
@@ -396,8 +401,7 @@ export default function Quiz() {
     setParticipantName(name)
     setNameConfirmed(true)
     saveName(name)
-    const newSessionId = generateSessionId()
-    setSessionId(newSessionId)
+    // sessionId sudah persisten dari loadOrCreateSessionId(), tidak perlu generate ulang
     startBiasa(questions, biasaCategory, biasaShuffleOn)
   }, [questions, biasaCategory, biasaShuffleOn])
 

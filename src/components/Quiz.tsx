@@ -450,6 +450,14 @@ export default function Quiz() {
 
   // ── Mode Biasa handlers ──
   const handleResetBiasa = useCallback(() => {
+    // Kirim data ke spreadsheet sebelum reset, sama seperti saat tab ditutup
+    const s = biasaStateRef.current
+    const answered = Object.values(s.answerMap).filter(a => a !== null && a !== undefined).length
+    if (answered > 0 && s.allQuestions.length > 0) {
+      const effectiveSessionId = s.shuffleOn ? s.shuffleSessionId : s.sessionId
+      const result = buildResult(s.participantName, effectiveSessionId, s.allQuestions, s.answerMap)
+      submitResult(result)
+    }
     clearBiasa()
     try { localStorage.removeItem(LS_NAME_KEY) } catch { /* noop */ }
     // Rotate shuffleSessionId saat reset → Apps Script akan buat baris baru
